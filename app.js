@@ -5,24 +5,24 @@ const router = express.Router();
 app.use(express.static("public"));
 app.use("view engine", "ejs");
 
-router.get("/", function(req, res) {
+Router.get("/", function(req, res) {
   res.render("home");
 
 });
 
-router.get("/sign-in", function(req, res) {
+Router.get("/sign-in", function(req, res) {
   res.render("sign-in");
 
 });
 
-router.get("/bye", function(req, res) {
+Router.get("/bye", function(req, res) {
   res.send("goodbye");
 
 });
 
 
 // Must stay on bottom
-router.get("*", function(req, res) {
+Router.get("*", function(req, res) {
   res.send("404 ERROR");
 
 });
