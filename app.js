@@ -10,19 +10,16 @@ app.get("/", function(req, res) {
 
 app.get("/sign-in", function(req, res) {
   res.render("sign-in.ejs");
-
 });
 
 app.get("/bye", function(req, res) {
   res.send("goodbye");
-
 });
 
 
 // Must stay on bottom
 app.get("*", function(req, res) {
   res.send("404 ERROR");
-
 });
 
 app.listen(3000, function() {
