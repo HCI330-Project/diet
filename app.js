@@ -1,32 +1,30 @@
 var express = require("express");
 var app = express();
-const router = express.Router();
 
 app.use(express.static("public"));
-app.use("view engine", "ejs");
 
-Router.get("/", function(req, res) {
-  res.render("home");
-
-});
-
-Router.get("/sign-in", function(req, res) {
-  res.render("sign-in");
+app.get("/", function(req, res) {
+  res.render("home.ejs");
 
 });
 
-Router.get("/bye", function(req, res) {
+app.get("/sign-in", function(req, res) {
+  res.render("sign-in.ejs");
+
+});
+
+app.get("/bye", function(req, res) {
   res.send("goodbye");
 
 });
 
 
 // Must stay on bottom
-Router.get("*", function(req, res) {
+app.get("*", function(req, res) {
   res.send("404 ERROR");
 
 });
-module.exports = router ;
+
 app.listen(3000, function() {
   console.log("Serving app on port 3000")
 })
