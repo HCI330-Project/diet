@@ -2,6 +2,7 @@ var express = require("express");
 var app = express();
 
 app.use(express.static("public"));
+app.use("view engine", "ejs");
 
 app.get("/", function(req, res) {
   res.render("home.ejs");
