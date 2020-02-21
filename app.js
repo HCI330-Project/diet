@@ -1,5 +1,6 @@
 var express = require("express");
 var app = express();
+const router = express.Router();
 
 app.use(express.static("public"));
 app.use("view engine", "ejs");
@@ -25,7 +26,7 @@ app.get("*", function(req, res) {
   res.send("404 ERROR");
 
 });
-
+module.exports = router ;
 app.listen(3000, function() {
   console.log("Serving app on port 3000")
 })
