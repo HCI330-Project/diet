@@ -15,7 +15,7 @@ app.get("/bye", function(req, res){
 
 // Must stay on bottom
 app.get("*", function(req, res){
-    res.send("404 ERROR);
+    res.send("404 ERROR");
 
 });
 
