@@ -4,8 +4,8 @@ var express               = require("express"),
     bodyParser            = require("body-parser"),
     User                  = require("./models/user"),
     LocalStrategy         = require("passport-local"),
-    passportLocalMongoose = require("passport-local-mongoose");
-
+    passportLocalMongoose = require("passport-local-mongoose"),
+    axios                 = require('axios').default;
 var app = express();
 mongoose.connect("mongodb://localhost/swole");
 app.use(require("express-session")({
@@ -47,24 +47,37 @@ app.get("/sign-in", function(req, res) {
 //   res.render("register.ejs");
 // });
 
-app.post("/register", function(req, res){
-  // res.send("register post route")
-    req.body.username
-    req.body.password
-    User.register(new User({username: req.body.username}), req.body.password, function(err, user){
-        if(err){
-          console.log(err);
-          return res.render('register.ejs');
-        }
-        passport.authenticate("local")(req, res, function(){
-            res.redirect("/register");
-        });
+axios.post("/register",{
+      firstName: 'Fred',
+      lastName: 'Flintstone'
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
     });
-});
+
+
+
+// app.post("/register", function(req, res){
+//   // res.send("register post route")
+//     req.body.username
+//     req.body.password
+//     User.register(new User({username: req.body.username}), req.body.password, function(err, user){
+//         if(err){
+//           console.log(err);
+//           return res.render('register.ejs');
+//         }
+//         passport.authenticate("local")(req, res, function(){
+//             res.redirect("/register");
+//         });
+//     });
+// });
 
 // Must stay on bottom
 app.get("*", function(req, res) {
-  res.send("404 ERROR");
+  res.send("404 ERROR123");
 });
 
 app.listen(3000, function() {
