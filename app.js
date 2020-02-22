@@ -43,7 +43,7 @@ app.get("/bye", function(req, res) {
 
 // Auth Routes
 app.get("/register", function(req,res){
-  res.render("register.ejs");
+  res.send("register.ejs");
 });
 
 // Must stay on bottom
