@@ -40,9 +40,6 @@ app.get("/sign-in", function(req, res) {
   res.render("sign-in.ejs");
 });
 
-app.get("/bye", function(req, res) {
-  res.send("goodbye");
-});
 
 
 // Auth Routes
@@ -51,18 +48,18 @@ app.get("/bye", function(req, res) {
 // });
 
 app.post("/register", function(req, res){
-  res.send("register post route")
-    // req.body.username
-    // req.body.password
-    // User.register(new User({username: req.body.username}), req.body.password, function(err, user){
-    //     if(err){
-    //       console.log(err);
-    //       return res.render('register.ejs');
-    //     }
-    //     passport.authenticate("local")(req, res, function(){
-    //         res.redirect("/register");
-    //     });
-    // });
+  // res.send("register post route")
+    req.body.username
+    req.body.password
+    User.register(new User({username: req.body.username}), req.body.password, function(err, user){
+        if(err){
+          console.log(err);
+          return res.render('register.ejs');
+        }
+        passport.authenticate("local")(req, res, function(){
+            res.redirect("/register");
+        });
+    });
 });
 
 // Must stay on bottom
