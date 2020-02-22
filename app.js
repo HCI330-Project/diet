@@ -17,6 +17,8 @@ app.use(express.static("public"));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(bodyParser.urlencoded({extended: true}));
+
+passport.use(User.UserSchema());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
@@ -48,18 +50,18 @@ app.get("/register", function(req,res){
 });
 
 app.post("/register", function(req, res){
-  res.send("register post route")
-    // req.body.username
-    // req.body.password
-    // User.register(new User({username: req.body.username}), req.body.password, function(err, user){
-    //     if(err){
-    //       console.log(err);
-    //       return res.render('register.ejs');
-    //     }
-    //     passport.authenticate("local")(req, res, function(){
-    //         res.redirect("/register");
-    //     });
-    // });
+  // res.send("register post route")
+    req.body.username
+    req.body.password
+    User.register(new User({username: req.body.username}), req.body.password, function(err, user){
+        if(err){
+          console.log(err);
+          return res.render('register.ejs');
+        }
+        passport.authenticate("local")(req, res, function(){
+            res.redirect("/register");
+        });
+    });
 });
 
 // Must stay on bottom
