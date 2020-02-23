@@ -1,7 +1,49 @@
-<h1> You are now logged in </h1>
+<%- include("partials/header") %>
+
+<h1> Welcome, <%= currentUser.username%>. </h1>
 <h2> This is your profile page </h2>
-<li>
-  <a href="/register">Sign Up!</a>
-  <a href="/login">Login</a>
-  <a href="/logout">Logout</a>
-</li>
+
+<h3> Your weight is:  <%= currentUser.weight%></h3>
+
+<% if (currentUser.gainMuscleIsTrue == true) { %>
+
+    <h3>You want to gain muscle.</h3>
+
+<% } else { %>
+
+  <h3>You want to lose fat.</h3>
+
+<%}%>
+
+<% if (currentUser.genderIsMale == true) { %>
+
+    <h3>Your gender is male.</h3>
+
+<% } else { %>
+
+  <h3>Your gender is female.</h3>
+
+<%}%>
+
+<p>Your mongodb info is: <%= currentUser %></p>
+
+
+<form action="/profile/?_method=PUT" method="POST">
+  <div id="form-field">
+    <input id="rounded-corner" type="text" name="userInfo[username]" placeholder="username" value ="<%= currentUser.username%>">
+  </div>
+
+  <div id="form-field">
+    <input id="rounded-corner" type="number" name="userInfo[weight]" placeholder="weight" value ="<%= currentUser.weight%>">
+  </div>
+  <div>
+    <p>I would like to:</p>
+      <input type="radio" id="gainMuscle" name="userInfo[gainMuscle]" value="<%= currentUser.gainMuscleIsTrue%>" checked onclick= "document.getElementById('loseFat').checked = false">
+      <label for="gainMuscle">Gain Muscle</label>
+
+      <input type="radio" id="loseFat" name="userInfo[gainMuscle]" value="false" onclick= "document.getElementById('gainMuscle').checked = false">
+      <label for="loseFat">Lose Fat</label>
+      <br>
+  </div>
+    <button>Save</button>
+</form>

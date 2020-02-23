@@ -3,7 +3,18 @@ var passportLocalMongoose = require("passport-local-mongoose");
 
 var UserSchema = new mongoose.Schema({
     username: String,
-    password: String
+    password: String,
+    weight: Number,
+    // genderIsMale: bool,
+    genderIsMale: {
+      type: Boolean,
+      default: false
+    },
+    gainMuscleIsTrue: {
+      type: Boolean,
+      default: false
+    }
+
 });
 
 

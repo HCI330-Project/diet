@@ -4,6 +4,7 @@ var express               = require("express"),
     bodyParser            = require("body-parser"),
     User                  = require("./models/user"),
     LocalStrategy         = require("passport-local"),
+    methodOverride        = require("method-override"),
     passportLocalMongoose = require("passport-local-mongoose");
 
 
@@ -22,11 +23,16 @@ app.use(express.static("public"));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(methodOverride("_method"));
 
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+app.use(function(req,res,next){
+    res.locals.currentUser = req.user;
+    next();
+});
 // =================
 // ROUTES
 // =================
@@ -36,13 +42,29 @@ app.get("/", function(req, res){
     res.render("home");
 });
 
-app.get("/secret", function(req, res){
-    res.render("secret");
+app.get("/profile", isLoggedIn, function(req, res){
+    User.find({}, function(err, allUsers){
+      if(err){
+        console.log(err);
+      } else {
+        res.render("profile", {currentUser: req.user});
+      }
+    });
+
 });
 
-app.get("/profile", isLoggedIn, function(req, res){
-    res.render("profile");
+app.put("/profile", function(req,res){
+    User.update(req.user, req.body.userInfo, function(err, updatedUser){
+      if(err){
+        res.redirect("/profile");
+        console.log(err)
+      } else{
+        res.redirect("/profile");
+      }
+    });
 });
+
+
 
 
 // =================
@@ -52,7 +74,12 @@ app.get("/register", function(req, res){
     res.render("register");
 });
 app.post("/register", function(req, res){
-    User.register(new User({username: req.body.username}), req.body.password, function(err, user){
+    User.register(new User({
+      username: req.body.username,
+      weight: req.body.weight,
+      gainMuscleIsTrue: req.body.gainMuscle,
+      genderIsMale: req.body.genderMale
+    }), req.body.password, function(err, user){
       if(err){
         console.log(err);
         return res.render('register');

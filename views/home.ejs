@@ -1,68 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="app.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,900i&display=swap" rel="stylesheet">
-    <title>SWOLE | Diet Planner</title>
-</head>
-<body>
-  <li>
-    <a href="/register">Sign Up!</a>
-    <a href="/login">Login</a>
-    <a href="/logout">Logout</a>
-  </li>
+<%- include("partials/header") %>
+
 
     <section id="form">
     <h1>SWOLE</h1>
-    <h3>Tell Us About Yourself: </h3>
+    <h3>Enter your weight: </h3>
     <form>
 
     <div id="form-field">
-        <label for="email">Email:</label><br>
-        <input id="rounded-corner" type="email" id="email" name="email"><br>
+        <input id="rounded-corner" type="number" id="weight" name="weight" placeholder="lbs"><br>
     </div>
-
-    <div id="form-field">
-        <label for="fname">First name:</label><br>
-        <input id="rounded-corner" type="text" id="fname" name="fname"><br>
-    </div>
-
-    <div id="form-field">
-        <label for="lname">Last name:</label><br>
-        <input id="rounded-corner" type="text" id="lname" name="lname"><br>
-    </div>
-
-    <div id="form-field">
-        <label for="weight"> Enter your weight:</label><br>
-        <input id="rounded-corner" type="number" id="weight" name="weight"><br>
-    </div>
-
-    <div id="form-field">
-        <label for="DOB">Date of Birth:</label><br>
-        <input id="rounded-corner" type="month" id="start" name="start"
-            min="1925-09" value="2018-05">
-    </div>
-
-        <p>Gender:</p>
-        <input type="radio" id="male" name="gender" value="male"
-                checked>
-        <label for="male">Male</label>
-
-        <input type="radio" id="female" name="gender" value="female">
-        <label for="female">Female</label>
-
-        <p>I would like to:</p>
-        <input type="radio" id="gain" name="goals" value="gain"
-                checked>
-        <label for="Gain">Gain Muscle</label>
-        <input type="radio" id="lose" name="goals" value="lose">
-        <label for="lose">Lose Weight</label>
+    <div>
+      <p>I am a:</p>
+      <div class="toggle">
+        <input type="radio" name="sizeBy" value="weight" id="sizeWeight" checked="checked" />
+        <label for="sizeWeight">Sitter</label>
+        <input type="radio" name="sizeBy" value="dimensions" id="sizeDimensions" />
+        <label for="sizeDimensions">Walker</label>
+        <input type="radio" name="sizeBy" value="dimensions" id="sizeDimension" />
+        <label for="sizeDimension">Runner</label>
+      </div>
         <br>
+    </div>
         <input type="submit" value="Submit">
     </form>
 </section>
-</body>
-</html>
+
+<%- include("partials/footer") %>

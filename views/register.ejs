@@ -1,7 +1,49 @@
-<h1>Sign up form</h1>
+<%- include("partials/header") %>
 
-<form action="/register" method="POST">
-    <input type="text" name="username" placeholder="username">
-    <input type="password" name="password" placeholder="password">
-    <button>Sign Up</button>
-</form>
+<section id="form">
+
+
+
+  <h1>SWOLE</h1>
+  <h1>Sign up</h1>
+
+  <form action="/register" method="POST">
+    <div id="form-field">
+      <input id="rounded-corner" type="text" name="username" placeholder="username">
+    </div>
+
+    <div id="form-field">
+      <input id="rounded-corner" type="number" name="weight" placeholder="weight">
+    </div>
+    <div id="form-field">
+      <input id="rounded-corner" type="password" name="password" placeholder="password">
+    </div>
+    <div id="form-field">
+      <input id="rounded-corner" type="password" name="confirm-password" placeholder="confirm password">
+    </div>
+    <div>
+      <p>Gender:</p>
+        <input type="radio" id="male" name="genderMale" value="1" checked onclick= "document.getElementById('female').checked = false">
+        <label for="genderMale">Male</label>
+
+        <input type="radio" id="female" name="loseFat" value="0" onclick= "document.getElementById('male').checked = false">
+        <label for="genderFemale">Female</label>
+        <br>
+    </div>
+    <div>
+      <p>I would like to:</p>
+        <input type="radio" id="gainMuscle" name="gainMuscle" value="1" checked onclick= "document.getElementById('loseFat').checked = false">
+        <label for="gainMuscle">Gain Muscle</label>
+
+        <input type="radio" id="loseFat" name="loseFat" value="0" onclick= "document.getElementById('gainMuscle').checked = false">
+        <label for="loseFat">Lose Fat</label>
+        <br>
+    </div>
+      <button>Sign Up</button>
+  </form>
+
+
+
+</section>
+
+<%- include("partials/footer") %>

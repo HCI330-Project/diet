@@ -2,10 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="/app.css">
+    <link rel="stylesheet" type="text/css" href="app.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,900i&display=swap" rel="stylesheet">
     <title>SWOLE | Diet Planner</title>
 </head>
 <body>
+  <li>
+    <% if (!currentUser) {%>
+    <a href="/register">Sign Up!</a>
+    <a href="/login">Login</a>
+    <%} else {%>
+    <a href="/logout">Logout</a>
+    <%}%>
+  </li>
