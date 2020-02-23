@@ -4,82 +4,93 @@ var express               = require("express"),
     bodyParser            = require("body-parser"),
     User                  = require("./models/user"),
     LocalStrategy         = require("passport-local"),
-    passportLocalMongoose = require("passport-local-mongoose"),
-    axios                 = require('axios').default;
-var app = express();
+    passportLocalMongoose = require("passport-local-mongoose");
+
+
 mongoose.connect("mongodb://localhost/swole");
+
+
+var app = express();
+app.set('view engine', 'ejs');
+
 app.use(require("express-session")({
-    secret:"Kiki is the cutest dog in the world",
+    secret: "very secret secret",
     resave: false,
     saveUninitialized: false
 }));
 app.use(express.static("public"));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended:true}));
 
-// passport.use(User.UserSchema());
-passport.use(User.createStrategy());
+passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-// =============
+// =================
 // ROUTES
-// =============
-app.get("/", function(req, res) {
-  res.render("home.ejs");
+// =================
 
+
+app.get("/", function(req, res){
+    res.render("home");
 });
 
-app.get("/profile", function(req, res) {
-  res.render("profile.ejs");
-
+app.get("/secret", function(req, res){
+    res.render("secret");
 });
 
-app.get("/sign-in", function(req, res) {
-  res.render("sign-in.ejs");
+app.get("/profile", isLoggedIn, function(req, res){
+    res.render("profile");
 });
 
 
-
-// Auth Routes
-// app.get("/register", function(req,res){
-//   res.render("register.ejs");
-// });
-
-axios.post("/register",{
-      firstName: 'Fred',
-      lastName: 'Flintstone'
-    })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
+// =================
+// AUTH ROUTES
+// =================
+app.get("/register", function(req, res){
+    res.render("register");
+});
+app.post("/register", function(req, res){
+    User.register(new User({username: req.body.username}), req.body.password, function(err, user){
+      if(err){
+        console.log(err);
+        return res.render('register');
+      }
+      passport.authenticate("local")(req, res, function(){
+        res.redirect("/profile");
+      });
     });
-
-
-
-// app.post("/register", function(req, res){
-//   // res.send("register post route")
-//     req.body.username
-//     req.body.password
-//     User.register(new User({username: req.body.username}), req.body.password, function(err, user){
-//         if(err){
-//           console.log(err);
-//           return res.render('register.ejs');
-//         }
-//         passport.authenticate("local")(req, res, function(){
-//             res.redirect("/register");
-//         });
-//     });
-// });
-
-// Must stay on bottom
-app.get("*", function(req, res) {
-  res.send("404 ERROR123");
 });
+
+
+//Login ROUTES
+app.get("/login", function(req, res){
+    res.render("login");
+});
+
+
+app.post("/login",passport.authenticate("local",{
+    successRedirect: "/profile",
+    failureRedirect: "/login"
+}), function(req, res){
+
+});
+
+
+app.get("/logout", function(req, res){
+    req.logout();
+    res.redirect("/");
+});
+
+
+function isLoggedIn(req, res, next){
+    if(req.isAuthenticated()){
+        return next();
+    }
+    res.redirect("/login");
+}
 
 app.listen(3000, function() {
-  console.log("Serving app on port 3000")
-});
+    console.log("Serving app on port 3000")
+  });

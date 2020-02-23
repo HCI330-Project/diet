@@ -11,25 +11,25 @@
 <body>
 
 <section id="form">
+
+
+
   <h1>SWOLE</h1>
-  <form action="action_page.php" method="post">
-
+  <form class="" action="/login" method="post">
     <div id="form-field">
-      <label for="uname"><b>Username</b></label><br>
-      <input id="rounded-corner" type="text" id="fname" name="fname" required><br>
+        <label for="username">Username:</label><br>
+        <input id="rounded-corner" type="text" name="username" palceholder="username">
+    </div>
+    <div id="form-field">
+        <label for="password">Password:</label><br>
+        <input id="rounded-corner" type="password" name="password" palceholder="password">
     </div>
 
-    <div id="form-field">
-      <label for="psw"><b>Password</b></label><br>
-      <input id="rounded-corner" type="text" id="fname" name="fname" required><br>
-    </div>
-
-    <div id="form-field">
-      <button type="submit">Sign In</button>
-      <button type="submit">Sign Up</button>
-    </div>
-
+    <button>Sign In</button><br>
+    <a href="/register">Sign Up!</a>
   </form>
+
+
 </section>
 </body>
 </html>
