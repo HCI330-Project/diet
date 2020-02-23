@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="/app.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,900i&display=swap" rel="stylesheet">
-    <title>SWOLE | Diet Planner</title>
-</head>
-<body>
+<%- include("partials/header") %>
 
 <section id="form">
 
@@ -17,12 +7,12 @@
   <h1>SWOLE</h1>
   <form class="" action="/login" method="post">
     <div id="form-field">
-        <label for="username">Username:</label><br>
-        <input id="rounded-corner" type="text" name="username" palceholder="username">
+        <!-- <label for="username">Username:</label><br> -->
+        <input id="rounded-corner" type="text" name="username" placeholder="username">
     </div>
     <div id="form-field">
-        <label for="password">Password:</label><br>
-        <input id="rounded-corner" type="password" name="password" palceholder="password">
+        <!-- <label for="password">Password:</label><br> -->
+        <input id="rounded-corner" type="password" name="password" placeholder="password">
     </div>
 
     <button>Sign In</button><br>
@@ -31,5 +21,6 @@
 
 
 </section>
-</body>
-</html>
+
+
+<%- include("partials/footer") %>
