@@ -3,39 +3,43 @@
 <h1> Welcome, <%= currentUser.username%>. </h1>
 <h2> This is your profile page </h2>
 
-<h3> Your weight is:  <%= currentUser.weight%></h3>
+<h5> Your weight is:  <%= currentUser.weight%></>
+<h5> The amount of calories you need to eat to maintain your weight is:  <%= currentUser.weight * currentUser.multiple%></h5>
+<h5> The amount of calories you need to eat to gain weight is:  <%= currentUser.weight * currentUser.multiple + 500%></h5>
 
 <% if (currentUser.gainMuscleIsTrue == true) { %>
 
-    <h3>You want to gain muscle.</h3>
+    <h5>You want to gain muscle.</h5>
 
 <% } else { %>
 
-  <h3>You want to lose fat.</h3>
+  <h5>You want to lose fat.</h5>
 
 <%}%>
 
 <% if (currentUser.genderIsMale == true) { %>
 
-    <h3>Your gender is male.</h3>
+    <h5>Your gender is male.</h5>
 
 <% } else { %>
 
-  <h3>Your gender is female.</h3>
+  <h5>Your gender is female.</h5>
 
 <%}%>
 
-<p>Your mongodb info is: <%= currentUser %></p>
+<p>Your mongodb info is: <br> <%= currentUser %></p>
+
+
 
 
 <form action="/profile/?_method=PUT" method="POST">
-  <div id="form-field">
-    <input id="rounded-corner" type="text" name="userInfo[username]" placeholder="username" value ="<%= currentUser.username%>">
-  </div>
 
   <div id="form-field">
+    <label for="userInfo[weight]">Update your weight:</label>
     <input id="rounded-corner" type="number" name="userInfo[weight]" placeholder="weight" value ="<%= currentUser.weight%>">
   </div>
+
+<!-- NOT UPDATING DB CORRECTLY -->
   <div>
     <p>I would like to:</p>
       <input type="radio" id="gainMuscle" name="userInfo[gainMuscle]" value="<%= currentUser.gainMuscleIsTrue%>" checked onclick= "document.getElementById('loseFat').checked = false">
@@ -44,6 +48,15 @@
       <input type="radio" id="loseFat" name="userInfo[gainMuscle]" value="false" onclick= "document.getElementById('gainMuscle').checked = false">
       <label for="loseFat">Lose Fat</label>
       <br>
+  </div>
+  <p>I am a:</p>
+  <div class="toggle">
+    <input type="radio" name="userInfo[sizeBy]" value="<%= currentUser.multiple-2%>" id="sizeWeight" checked="checked" />
+    <label for="sizeWeight">Sitter</label>
+    <input type="radio" name="userInfo[sizeBy]" value="<%= currentUser.multiple-1%>" id="sizeDimensions" />
+    <label for="sizeDimensions">Walker</label>
+    <input type="radio" name="userInfo[sizeBy]" value="<%= currentUser.multiple%>" id="sizeDimension" />
+    <label for="sizeDimension">Runner</label>
   </div>
     <button>Save</button>
 </form>

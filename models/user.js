@@ -10,6 +10,7 @@ var UserSchema = new mongoose.Schema({
       type: Boolean,
       default: false
     },
+    multiple: Number,
     gainMuscleIsTrue: {
       type: Boolean,
       default: false
