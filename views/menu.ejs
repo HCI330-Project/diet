@@ -1,0 +1,44 @@
+<%- include("partials/header") %>
+<h1>Welcome to the menu</h1>
+<h5>Your weight is: <%= weight %> lbs</h5>
+<h5>Your athletic multiple is: <%= multiple %></h5>
+<h5>Your total daily expenditure rate is: <%= weight * multiple %> calories</h5>
+
+<%var balance = weight * multiple + surplus%>
+
+<%
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+}
+%>
+
+<%#
+0 - 10: protein sources: getRandomInt(0,11)
+11 - 20: carb sources: getRandomInt(11,21)
+21 - 30: fat sources: getRandomInt(21,31)
+%>
+
+<%= food[getRandomInt(0,3)].name %>
+
+
+<%if(goal ==1){ %>
+<%var surplus = 500;%>
+<h5>Your goal is to gain muscle so we will add 500 calories</h5>
+<h5>You should eat: <%= weight * multiple + surplus %> calories today in order to move toward your goals.</h5>
+
+<%} else { %>
+<%var surplus = -500;%>
+<h5>Your goal is to burn fat so we will subtract 500 calories</h5>
+<h5>You should eat <%= weight * multiple + surplus %> calories today in order to move toward your goals.</h5>
+<%}%>
+<br>
+<h1>Meal 1:</h1>
+<h5><%= Math.floor((weight * multiple + surplus)/3) %> calories</h5>
+<h5>Protein: <%= Math.floor(((weight * multiple + surplus)/3)*0.4) %> calories, <%= Math.floor((((weight * multiple + surplus)/3)*0.4)/4) %> grams</h5>
+<h5>Carbs: <%= Math.floor(((weight * multiple + surplus)/3)*0.4) %> calories, <%= Math.floor((((weight * multiple + surplus)/3)*0.4)/4) %> grams</h5>
+<h5>Fat: <%= Math.floor(((weight * multiple + surplus)/3)*0.2) %> calories, <%= Math.floor((((weight * multiple + surplus)/3)*0.2)/9) %> grams</h5>
+<br>
+
+<%- include("partials/footer") %>

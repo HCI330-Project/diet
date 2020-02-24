@@ -4,19 +4,28 @@
     <section id="form">
     <h1>SWOLE</h1>
     <h3>Enter your weight: </h3>
-    <form>
 
+    <form action="/" method="POST">
     <div id="form-field">
-        <input id="rounded-corner" type="number" id="weight" name="weight" placeholder="lbs"><br>
+        <input id="rounded-corner" type="number" id="weight" name="weight" placeholder="lbs" min="1" max="1400"><br>
+    </div>
+    <div>
+      <p>I would like to:</p>
+        <input type="radio" id="gainMuscle" name="goal" value="1" checked onclick= "document.getElementById('loseFat').checked = false">
+        <label for="gainMuscle">Gain Muscle</label>
+
+        <input type="radio" id="loseFat" name="goal" value="0" onclick= "document.getElementById('gainMuscle').checked = false">
+        <label for="loseFat">Burn Fat</label>
+        <br>
     </div>
     <div>
       <p>I am a:</p>
       <div class="toggle">
-        <input type="radio" name="sizeBy" value="weight" id="sizeWeight" checked="checked" />
+        <input type="radio" name="sizeBy" value="11" id="sizeWeight" checked="checked" />
         <label for="sizeWeight">Sitter</label>
-        <input type="radio" name="sizeBy" value="dimensions" id="sizeDimensions" />
+        <input type="radio" name="sizeBy" value="13" id="sizeDimensions" />
         <label for="sizeDimensions">Walker</label>
-        <input type="radio" name="sizeBy" value="dimensions" id="sizeDimension" />
+        <input type="radio" name="sizeBy" value="15" id="sizeDimension" />
         <label for="sizeDimension">Runner</label>
       </div>
         <br>

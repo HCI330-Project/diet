@@ -3,11 +3,13 @@ var express               = require("express"),
     passport              = require("passport"),
     bodyParser            = require("body-parser"),
     User                  = require("./models/user"),
+    Food                  = require("./models/food"),
     LocalStrategy         = require("passport-local"),
     methodOverride        = require("method-override"),
-    passportLocalMongoose = require("passport-local-mongoose");
+    passportLocalMongoose = require("passport-local-mongoose"),
+    seedDB                = require("./seeds");
 
-
+seedDB();
 mongoose.connect("mongodb://localhost/swole");
 
 
@@ -53,6 +55,7 @@ app.get("/profile", isLoggedIn, function(req, res){
 
 });
 
+// UPDATE USER INFORMTION
 app.put("/profile", function(req,res){
     User.update(req.user, req.body.userInfo, function(err, updatedUser){
       if(err){
@@ -65,6 +68,20 @@ app.put("/profile", function(req,res){
 });
 
 
+// app.get("/menu", function(req, res){
+//     res.render("menu");
+// });
+
+app.post("/", function(req, res){
+    Food.find({}, function(err, allFood){
+      if(err){
+        console.log(err);
+      }else{
+        res.render("menu", {weight: req.body.weight, multiple:req.body.sizeBy, goal:req.body.goal, food: allFood})
+      }
+    });
+
+});
 
 
 // =================
@@ -78,7 +95,8 @@ app.post("/register", function(req, res){
       username: req.body.username,
       weight: req.body.weight,
       gainMuscleIsTrue: req.body.gainMuscle,
-      genderIsMale: req.body.genderMale
+      genderIsMale: req.body.genderMale,
+      multiple: req.body.sizeBy
     }), req.body.password, function(err, user){
       if(err){
         console.log(err);
