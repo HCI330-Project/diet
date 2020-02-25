@@ -36,19 +36,19 @@ var data = [
     },
     {
       name: "Chicken Breast",
-      ounces: 1,
-      calories: 150,
-      proteins: 12,
-      carbs: 0,
-      fat: 1
-    },
-    {
-      name: "Turkey Breast",
-      ounces: 4.4,
-      calories: 120,
+      ounces: 4,
+      calories: 130,
       proteins: 28,
       carbs: 0,
-      fat: 0
+      fat: 2.5
+    },
+    {
+      name: "Canned Tuna",
+      ounces: 4,
+      calories: 120,
+      proteins: 30,
+      carbs: 0,
+      fat: 1
     },
     {
       name: "Beef Sirloin",

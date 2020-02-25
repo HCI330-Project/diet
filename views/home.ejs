@@ -2,7 +2,7 @@
 
 
     <section id="form">
-    <h1>SWOLE</h1>
+    <!-- <h1>SWOLE</h1> -->
     <h3>Enter your weight: </h3>
 
     <form action="/" method="POST">
@@ -11,12 +11,14 @@
     </div>
     <div>
       <p>I would like to:</p>
+      <div class="toggle">
         <input type="radio" id="gainMuscle" name="goal" value="1" checked onclick= "document.getElementById('loseFat').checked = false">
         <label for="gainMuscle">Gain Muscle</label>
 
         <input type="radio" id="loseFat" name="goal" value="0" onclick= "document.getElementById('gainMuscle').checked = false">
         <label for="loseFat">Burn Fat</label>
         <br>
+      </div>
     </div>
     <div>
       <p>I am a:</p>
@@ -32,6 +34,8 @@
     </div>
         <input type="submit" value="Submit">
     </form>
+
+
 </section>
 
 <%- include("partials/footer") %>
