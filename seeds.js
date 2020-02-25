@@ -4,11 +4,27 @@ var Food = require("./models/food")
 var data = [
     {
       name: "Chicken Breast",
-      ounces: 1,
-      calories: 150,
-      proteins: 12,
+      ounces: 4,
+      calories: 130,
+      proteins: 28,
+      carbs: 0,
+      fat: 2.5
+    },
+    {
+      name: "Canned Tuna",
+      ounces: 4,
+      calories: 120,
+      proteins: 30,
       carbs: 0,
       fat: 1
+    },
+    {
+      name: "Chicken Thighs",
+      ounces: 4,
+      calories: 150,
+      proteins: 20,
+      carbs: 0,
+      fat: 8
     },
     {
       name: "White Rice",
