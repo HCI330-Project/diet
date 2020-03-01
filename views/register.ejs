@@ -4,25 +4,24 @@
 
 
 
-  <h1>SWOLE</h1>
-  <h1>Sign up</h1>
+  <h4>Sign up</h4>
 
   <form action="/register" method="POST">
     <div id="form-field">
-      <input id="rounded-corner" type="text" name="username" placeholder="username">
+      <input id="rounded-corner" type="text" name="username" placeholder="username" required>
     </div>
 
     <div id="form-field">
-      <input id="rounded-corner" type="number" name="weight" placeholder="weight">
+      <input id="rounded-corner" type="number" name="weight" min="46" max="1400" placeholder="weight" required>
     </div>
     <div id="form-field">
-      <input id="rounded-corner" type="password" name="password" placeholder="password">
+      <input id="rounded-corner" type="password" name="password" placeholder="password" required>
     </div>
     <div id="form-field">
-      <input id="rounded-corner" type="password" name="confirm-password" placeholder="confirm password">
+      <input id="rounded-corner" type="password" name="confirm-password" placeholder="confirm password" required>
     </div>
-    <div>
-      <p>Gender:</p>
+    <div class="pb-3">
+      <h5>Gender:</h5>
         <input type="radio" id="male" name="genderMale" value="1" checked onclick= "document.getElementById('female').checked = false">
         <label for="genderMale">Male</label>
 
@@ -30,8 +29,8 @@
         <label for="genderFemale">Female</label>
         <br>
     </div>
-    <div>
-      <p>I would like to:</p>
+    <div class="pb-3">
+      <h5>I would like to:</h5>
         <input type="radio" id="gainMuscle" name="gainMuscle" value="1" checked onclick= "document.getElementById('loseFat').checked = false">
         <label for="gainMuscle">Gain Muscle</label>
 
@@ -39,16 +38,24 @@
         <label for="loseFat">Lose Fat</label>
         <br>
     </div>
-    <p>I am a:</p>
-    <div class="toggle">
-      <input type="radio" name="sizeBy" value="11" id="sizeWeight" checked="checked" />
-      <label for="sizeWeight">Sitter</label>
-      <input type="radio" name="sizeBy" value="13" id="sizeDimensions" />
-      <label for="sizeDimensions">Walker</label>
-      <input type="radio" name="sizeBy" value="15" id="sizeDimension" />
-      <label for="sizeDimension">Runner</label>
+    <h5>I am a:</h5>
+    <div class="d-flex justify-content-center">
+      <div class="toggle">
+        <input type="radio" name="sizeBy" value="11" id="sizeWeight" checked="checked" />
+        <label for="sizeWeight">Sitter</label>
+        <input type="radio" name="sizeBy" value="13" id="sizeDimensions" />
+        <label for="sizeDimensions">Walker</label>
+        <input type="radio" name="sizeBy" value="15" id="sizeDimension" />
+        <label for="sizeDimension">Runner</label>
+      </div>
+
     </div>
-      <button>Sign Up</button>
+
+    <div class="d-flex justify-content-center">
+      <button class="btn btn-primary" type="submit" name="button">Submit</button>
+    </div>
+
+
   </form>
 
 

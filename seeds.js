@@ -91,12 +91,12 @@ var data = [
       fat: 12
     },
     {
-      name: "Kashi GoLean Original Cereal, no milk",
+      name: "Kashi GoLean Original Cereal & 1 Cup Skim Milk",
       ounces: 1.9,
-      calories: 180,
-      proteins: 12,
-      carbs: 40,
-      fat: 2
+      calories: 180 + 40,
+      proteins: 12 + 14,
+      carbs: 40 + 1,
+      fat: 2 + 9
     },
     {
       name: "Premier Chocolate Protein Shake",
@@ -114,14 +114,14 @@ var data = [
       carbs: 1,
       fat: 4
     },
-    {
-      name: "Skim Milk",
-      ounces: 4,
-      calories: 40,
-      proteins: 4,
-      carbs: 6,
-      fat: 0
-    },
+    // {
+    //   name: "Skim Milk",
+    //   ounces: 4,
+    //   calories: 40,
+    //   proteins: 4,
+    //   carbs: 6,
+    //   fat: 0
+    // },
     {
       name: "Cottage Cheese",
       ounces: 3.5,

@@ -9,7 +9,7 @@
 
 <% if (currentUser.gainMuscleIsTrue == true) { %>
 
-    <h5>You want to gain muscle.</h5>
+  <h5>You want to gain muscle.</h5>
 
 <% } else { %>
 
@@ -27,36 +27,56 @@
 
 <%}%>
 
-<p>Your mongodb info is: <br> <%= currentUser %></p>
 
+<div class="d-flex justify-content-center align-items-center" >
+  <form action="/profile/?_method=PUT" method="POST">
 
+    <div>
+        <h5 class="text-center">My current weight is:</h5>
+    </div>
 
+      <div class="d-flex justify-content-center justify-content-lg-start pl-lg-5 text-center align-items-center" id="form-field">
+        <input id="rounded-corner" type="number" name="userInfo[weight]" placeholder="weight" value ="<%= currentUser.weight%>">
+      </div>
 
-<form action="/profile/?_method=PUT" method="POST">
+      <div class="d-flex justify-content-center justify-content-lg-start pb-5 pl-lg-5">
+        <button class="btn btn-primary" type="submit" name="button">Update</button>
+      </div>
 
-  <div id="form-field">
-    <label for="userInfo[weight]">Update your weight:</label>
-    <input id="rounded-corner" type="number" name="userInfo[weight]" placeholder="weight" value ="<%= currentUser.weight%>">
-  </div>
 
 <!-- NOT UPDATING DB CORRECTLY -->
-  <div>
-    <p>I would like to:</p>
-      <input type="radio" id="gainMuscle" name="userInfo[gainMuscle]" value="<%= currentUser.gainMuscleIsTrue%>" checked onclick= "document.getElementById('loseFat').checked = false">
-      <label for="gainMuscle">Gain Muscle</label>
 
-      <input type="radio" id="loseFat" name="userInfo[gainMuscle]" value="false" onclick= "document.getElementById('gainMuscle').checked = false">
-      <label for="loseFat">Lose Fat</label>
-      <br>
+      <div>
+          <h5 class="text-center">I would like to:</h5>
+      </div>
+
+      <div class="pb-3">
+        <div class="toggle">
+          <input type="radio" id="gainMuscle" name="goal" value="1" checked onclick= "document.getElementById('loseFat').checked = false">
+          <label for="gainMuscle">Gain Muscle</label>
+
+          <input type="radio" id="loseFat" name="goal" value="0" onclick= "document.getElementById('gainMuscle').checked = false">
+          <label for="loseFat">Burn Fat</label>
+          <br>
+        </div>
+      </div>
+
+      <div>
+          <h5 class="text-center"> I am a:</h5>
+      </div>
+
+      <div class="toggle pb-3">
+        <input type="radio" name="sizeBy" value="11" id="sizeWeight" checked="checked" />
+        <label for="sizeWeight">Sitter</label>
+        <input type="radio" name="sizeBy" value="13" id="sizeDimensions" />
+        <label for="sizeDimensions">Walker</label>
+        <input type="radio" name="sizeBy" value="15" id="sizeDimension" />
+        <label for="sizeDimension">Runner</label>
+      </div>
+
+    <div class="d-flex justify-content-center justify-content-lg-start pl-lg-5">
+      <button class="btn btn-primary" type="submit" name="button">Save</button>
+    </div>
+
+  </form>
   </div>
-  <p>I am a:</p>
-  <div class="toggle">
-    <input type="radio" name="userInfo[sizeBy]" value="<%= currentUser.multiple-2%>" id="sizeWeight" checked="checked" />
-    <label for="sizeWeight">Sitter</label>
-    <input type="radio" name="userInfo[sizeBy]" value="<%= currentUser.multiple-1%>" id="sizeDimensions" />
-    <label for="sizeDimensions">Walker</label>
-    <input type="radio" name="userInfo[sizeBy]" value="<%= currentUser.multiple%>" id="sizeDimension" />
-    <label for="sizeDimension">Runner</label>
-  </div>
-    <button>Save</button>
-</form>
