@@ -91,7 +91,7 @@ var data = [
       fat: 12
     },
     {
-      name: "Kashi GoLean Original Cereal & 1 Cup Skim Milk",
+      name: "Kashi GoLean Original Cereal + 1 Cup Skim Milk",
       ounces: 1.9,
       calories: 180 + 40,
       proteins: 12 + 14,
