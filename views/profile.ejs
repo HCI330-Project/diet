@@ -1,57 +1,53 @@
 <%- include("partials/header") %>
+<div class="d-flex justify-content-center justify-content-lg-start pt-4 pl-lg-4 text-center text-lg-left align-items-center" >
+  <div class="d-flex justify-content-center justify-content-lg-start pl-lg-4 text-center text-lg-left align-items-center" >
+  <h2> Welcome, <%= currentUser.username%>. </h2>
+  </div>
+</div>
 
-<h1> Welcome, <%= currentUser.username%>. </h1>
-<h2> This is your profile page </h2>
-
-<h5> Your weight is:  <%= currentUser.weight%></>
-<h5> The amount of calories you need to eat to maintain your weight is:  <%= currentUser.weight * currentUser.multiple%></h5>
-<h5> The amount of calories you need to eat to gain weight is:  <%= currentUser.weight * currentUser.multiple + 500%></h5>
-
+<br>
 <% if (currentUser.gainMuscleIsTrue == true) { %>
-
-  <h5>You want to gain muscle.</h5>
-
+  <div class="d-flex justify-content-center justify-content-lg-start pl-lg-4 pt-0 text-center text-lg-left align-items-center" >
+    <div class="d-flex justify-content-center justify-content-lg-start pl-lg-4 text-center text-lg-left align-items-center">
+      <h5 class="text-center">Eat <%= currentUser.weight * currentUser.multiple + 500%> calories to burn fat today. </h5>
+    </div>
+  </div>
 <% } else { %>
-
-  <h5>You want to lose fat.</h5>
-
-<%}%>
-
-<% if (currentUser.genderIsMale == true) { %>
-
-    <h5>Your gender is male.</h5>
-
-<% } else { %>
-
-  <h5>Your gender is female.</h5>
-
+  <div class="d-flex justify-content-center justify-content-lg-start pl-lg-4 pt-0 text-center text-lg-left align-items-center" >
+    <div class="d-flex justify-content-center justify-content-lg-start pl-lg-4 text-center text-lg-left align-items-center" >
+      <h5>Eat <%= currentUser.weight * currentUser.multiple - 500%> calories to burn fat today. </h5>
+    </div>
+  </div>
+<br>
 <%}%>
 
 
-<div class="d-flex justify-content-center align-items-center" >
+
+
+<div class="d-flex justify-content-center justify-content-lg-start pl-lg-4 text-center text-lg-left align-items-center" >
   <form action="/profile/?_method=PUT" method="POST">
 
-    <div>
-        <h5 class="text-center">My current weight is:</h5>
-    </div>
+      <div class="d-flex justify-content-center justify-content-lg-start pl-lg-4 text-center text-lg-left align-items-center">
+          <h5 class="text-center">Your current weight is:</h5>
+      </div>
 
-      <div class="d-flex justify-content-center justify-content-lg-start pl-lg-5 text-center align-items-center" id="form-field">
+      <div class="d-flex justify-content-center pb-3 justify-content-lg-start pl-lg-4 text-center text-lg-left align-items-center" id="form-field">
         <input id="rounded-corner" type="number" name="userInfo[weight]" placeholder="weight" value ="<%= currentUser.weight%>">
       </div>
 
-      <div class="d-flex justify-content-center justify-content-lg-start pb-5 pl-lg-5">
+      <div class="d-flex justify-content-center justify-content-lg-start pb-5 pl-lg-4">
         <button class="btn btn-primary" type="submit" name="button">Update</button>
       </div>
 
 
 <!-- NOT UPDATING DB CORRECTLY -->
 
-      <div>
-          <h5 class="text-center">I would like to:</h5>
+      <div class="d-flex justify-content-center justify-content-lg-start pl-lg-4 text-center text-lg-left align-items-center">
+          <h5 class="text-center ">I would like to:</h5>
       </div>
 
-      <div class="pb-3">
-        <div class="toggle">
+      <div class="pt-3 justify-content-lg-start">
+        <div class="toggle pb-3 pl-lg-4 justify-content-lg-start">
           <input type="radio" id="gainMuscle" name="goal" value="1" checked onclick= "document.getElementById('loseFat').checked = false">
           <label for="gainMuscle">Gain Muscle</label>
 
@@ -61,11 +57,11 @@
         </div>
       </div>
 
-      <div>
+      <div class="d-flex justify-content-center justify-content-lg-start pl-lg-4 text-center text-lg-left align-items-center">
           <h5 class="text-center"> I am a:</h5>
       </div>
 
-      <div class="toggle pb-3">
+      <div class="toggle pt-3 pb-3 pl-lg-4 justify-content-lg-start">
         <input type="radio" name="sizeBy" value="11" id="sizeWeight" checked="checked" />
         <label for="sizeWeight">Sitter</label>
         <input type="radio" name="sizeBy" value="13" id="sizeDimensions" />
@@ -74,7 +70,7 @@
         <label for="sizeDimension">Runner</label>
       </div>
 
-    <div class="d-flex justify-content-center justify-content-lg-start pl-lg-5">
+    <div class="d-flex justify-content-center justify-content-lg-start pl-lg-4">
       <button class="btn btn-primary" type="submit" name="button">Save</button>
     </div>
 
