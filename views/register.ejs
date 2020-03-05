@@ -2,8 +2,6 @@
 
 <section id="form">
 
-
-
   <h4>Sign up</h4>
 
   <form action="/register" method="POST">
@@ -22,21 +20,25 @@
     </div>
     <div class="pb-3">
       <h5>Gender:</h5>
-        <input type="radio" id="male" name="genderMale" value="1" checked onclick= "document.getElementById('female').checked = false">
-        <label for="genderMale">Male</label>
+      <input type="radio" id="male" name="genderMale" value="1" checked
+        onclick="document.getElementById('female').checked = false">
+      <label for="genderMale">Male</label>
 
-        <input type="radio" id="female" name="loseFat" value="0" onclick= "document.getElementById('male').checked = false">
-        <label for="genderFemale">Female</label>
-        <br>
+      <input type="radio" id="female" name="loseFat" value="0"
+        onclick="document.getElementById('male').checked = false">
+      <label for="genderFemale">Female</label>
+      <br>
     </div>
     <div class="pb-3">
       <h5>I would like to:</h5>
-        <input type="radio" id="gainMuscle" name="gainMuscle" value="1" checked onclick= "document.getElementById('loseFat').checked = false">
-        <label for="gainMuscle">Gain Muscle</label>
+      <input type="radio" id="gainMuscle" name="gainMuscle" value="1" checked
+        onclick="document.getElementById('loseFat').checked = false">
+      <label for="gainMuscle">Gain Muscle</label>
 
-        <input type="radio" id="loseFat" name="loseFat" value="0" onclick= "document.getElementById('gainMuscle').checked = false">
-        <label for="loseFat">Lose Fat</label>
-        <br>
+      <input type="radio" id="loseFat" name="loseFat" value="0"
+        onclick="document.getElementById('gainMuscle').checked = false">
+      <label for="loseFat">Lose Fat</label>
+      <br>
     </div>
     <h5>I am a:</h5>
     <div class="d-flex justify-content-center">
