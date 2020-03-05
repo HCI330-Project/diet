@@ -2,48 +2,51 @@
 
 
 <div class="d-flex justify-content-center align-items-center pt-5" style="height:50%">
-    <form action="/" method="POST">
-        <div>
-            <h5 class="text-center">Enter your weight:</h5>
-        </div>
+  <form action="/" method="POST">
+    <div>
+      <h5 class="text-center">Enter your weight:</h5>
+    </div>
 
-        <div class="d-flex justify-content-center pb-3">
-            <input id="rounded-corner" type="number" id="weight" name="weight" placeholder="lbs" min="46" max="1400" required><br>
-        </div>
+    <div class="d-flex justify-content-center pb-3">
+      <input id="rounded-corner" type="number" id="weight" name="weight" placeholder="lbs" min="46" max="1400"
+        required><br>
+    </div>
+    <br>
+
+    <div>
+      <h5 class="text-center">I would like to:</h5>
+    </div>
+
+    <div class="pb-3">
+      <div class="toggle">
+        <input type="radio" id="gainMuscle" name="goal" value="1" checked
+          onclick="document.getElementById('loseFat').checked = false">
+        <label for="gainMuscle">Gain Muscle</label>
+
+        <input type="radio" id="loseFat" name="goal" value="0"
+          onclick="document.getElementById('gainMuscle').checked = false">
+        <label for="loseFat">Burn Fat</label>
         <br>
+      </div>
+    </div>
 
-        <div>
-            <h5 class="text-center">I would like to:</h5>
-        </div>
+    <div>
+      <h5 class="text-center"> I am a:</h5>
+    </div>
 
-        <div class="pb-3">
-          <div class="toggle">
-            <input type="radio" id="gainMuscle" name="goal" value="1" checked onclick= "document.getElementById('loseFat').checked = false">
-            <label for="gainMuscle">Gain Muscle</label>
+    <div class="toggle pb-3">
+      <input type="radio" name="sizeBy" value="11" id="sizeWeight" checked="checked" />
+      <label for="sizeWeight">Sitter</label>
+      <input type="radio" name="sizeBy" value="13" id="sizeDimensions" />
+      <label for="sizeDimensions">Walker</label>
+      <input type="radio" name="sizeBy" value="15" id="sizeDimension" />
+      <label for="sizeDimension">Runner</label>
+    </div>
 
-            <input type="radio" id="loseFat" name="goal" value="0" onclick= "document.getElementById('gainMuscle').checked = false">
-            <label for="loseFat">Burn Fat</label>
-            <br>
-          </div>
-        </div>
-
-        <div>
-            <h5 class="text-center"> I am a:</h5>
-        </div>
-
-        <div class="toggle pb-3">
-          <input type="radio" name="sizeBy" value="11" id="sizeWeight" checked="checked" />
-          <label for="sizeWeight">Sitter</label>
-          <input type="radio" name="sizeBy" value="13" id="sizeDimensions" />
-          <label for="sizeDimensions">Walker</label>
-          <input type="radio" name="sizeBy" value="15" id="sizeDimension" />
-          <label for="sizeDimension">Runner</label>
-        </div>
-
-        <div class="d-flex justify-content-end">
-          <button class="btn btn-primary" type="submit" name="button">Submit</button>
-        </div>
-    </form>
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-primary" type="submit" name="button">Submit</button>
+    </div>
+  </form>
 </div>
 
 
