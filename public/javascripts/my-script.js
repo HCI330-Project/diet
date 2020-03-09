@@ -3,6 +3,9 @@ const walker = document.getElementById('sizeDimensions');
 const runner = document.getElementById('sizeDimension');
 const gainMuscle = document.getElementById('gainMuscle');
 const burnFat = document.getElementById('loseFat');
+const male = document.getElementById('male');
+// const goalGain = document.getElementById('gainMuscle1');
+// const goalBurn = document.getElementById('loseFat1');
 
 sitter.addEventListener('click', () => {
     document.getElementById('sitter-img').src = '/food-icons/sitter-white.svg';
@@ -44,20 +47,14 @@ burnFat.addEventListener('click', () => {
     }, 200)
 })
 
-const male = document.getElementById('male');
-// // const female = document.getElementById('female');
+// goalGain.addEventListener('click', () => {
+//     document.querySelector('#gainMuscle').checked = true
+//     document.querySelector('#loseFat').checked = false
+//     goalGain.style.color = white;
+//     goalGain.style.backgroundColor = black;
+
+// })
+
 male.addEventListener('click', () => {
     male.checked = true;
-    //     //  document.getElementById('male').src = '/food-icons/male-white.svg';
-    //     document.getElementById('male').checked = true;
-    //     //  document.getElementById('female').src = '/food-icons/female.svg';
 });
-// female.addEventListener('click', () => {
-//     document.getElementById('male').src = '/food-icons/male.svg';
-//     document.getElementById('female').checked = true;
-//     document.getElementById('female').src = '/food-icons/female-white.svg';
-// });
-
-function yeet() {
-    document.getElementById('male').checked = true;
-}

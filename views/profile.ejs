@@ -31,10 +31,6 @@
 <%}%>
 
 
-
-
-
-
 <!-- GET TODAY's MENU -->
 
 <form action="/profile" method="POST" class="pb-5">
@@ -47,14 +43,6 @@
   <button class="register-go" type="submit" name="button">Get Today's Menu</button>
 </div>
 </form>
-
-
-
-
-
-
-
-
 
 
 <div
@@ -78,44 +66,6 @@
     </div>
 
 
-
-
-
-    <!-- NOT UPDATING DB CORRECTLY -->
-
-    <!-- <div class="d-flex justify-content-center justify-content-lg-start pl-lg-4 text-center text-lg-left align-items-center">
-  <h5 class="text-center ">I would like to:</h5>
-</div>
-
-<div class="pt-3 justify-content-lg-start">
-  <div class="toggle pb-3 pl-lg-4 justify-content-lg-start">
-    <input type="radio" id="gainMuscle" name="goal" value="1" checked
-      onclick="document.getElementById('loseFat').checked = false">
-    <label for="gainMuscle">Gain Muscle</label>
-
-    <input type="radio" id="loseFat" name="goal" value="0"
-      onclick="document.getElementById('gainMuscle').checked = false">
-    <label for="loseFat">Burn Fat</label>
-    <br>
-  </div>
-</div>
-
-<div class="d-flex justify-content-center justify-content-lg-start pl-lg-4 text-center text-lg-left align-items-center">
-  <h5 class="text-center"> I am a:</h5>
-</div>
-
-<div class="toggle pt-3 pb-3 pl-lg-4 justify-content-lg-start">
-  <input type="radio" name="sizeBy" value="11" id="sizeWeight" checked="checked" />
-  <label for="sizeWeight">Sitter</label>
-  <input type="radio" name="sizeBy" value="13" id="sizeDimensions" />
-  <label for="sizeDimensions">Walker</label>
-  <input type="radio" name="sizeBy" value="15" id="sizeDimension" />
-  <label for="sizeDimension">Runner</label>
-</div>
-
-<div class="d-flex justify-content-center justify-content-lg-start pl-lg-4">
-  <button class="btn btn-primary" type="submit" name="button">Save</button>
-</div> -->
     <div class="footer justify-content-center align-items-center text-center">
       <% if (!currentUser) {%>
       <p class="mr-3"><a href="/register">Sign up!</a></p>
