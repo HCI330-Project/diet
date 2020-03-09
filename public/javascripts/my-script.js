@@ -60,6 +60,9 @@ male.addEventListener('click', () => {
 });
 
 
-if (window.matchMedia('(display-mode: standalone)').matches) {
+const isInStandaloneMode = () =>
+    (window.matchMedia('(display-mode: standalone)').matches) || (window.navigator.standalone) || document.referrer.includes('android-app://');
+
+if (isInStandaloneMode()) {
     document.querySelector('.footer').setAttribute("style", "bottom: 0px; border: 1px solid blue;");
 }
