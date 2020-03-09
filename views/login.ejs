@@ -27,4 +27,16 @@
     </form>
   </div>
 </section>
+
+<div class="footer justify-content-center align-items-center text-center">
+  <% if (!currentUser) {%>
+  <p class="mr-3"><a href="/register">Sign up!</a></p>
+  <p><a href="/login">Login</a></p>
+
+  <%} else {%>
+  <p class="mr-3"><a href="/profile">Profile</a></p>
+  <p><a href="/logout">Logout</a></p>
+  <%}%>
+
+</div>
 <%- include("partials/footer") %>
