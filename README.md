@@ -14,7 +14,7 @@ Watch a User Test: [Interview](https://youtu.be/ts-yDdSn_7E).
 
 The concept was largely intuitive to users, but several problems warranted changes. First, wording in the hamburger menu puzzled users. For example, users did not expect to find upcoming meals by clicking the "Calendar" link, so it was changed to "Upcoming Meals". Similarly, users did not expect the front page's "Go" button, listed beneath the data collection form, to generate a meal plan. Thus, "Go" is changed to "Get Meals". The biggest problem was how users were unsure of when to click their profile icon or the hamburger menu, which are located in the upper right and upper left corners, respectively. Thus, "Profile" was moved to be a field inside the hamburger menu.
 
-###High-Fidelity Prototyping
+### High-Fidelity Prototyping
 
 A data collection form was Swole's first component. The form contained three text fields for one's email, first name and last name, then a number field to collect weight information, a calendar field to choose date of birth, and two selection fields to choose a gender and fitness goal.
 
