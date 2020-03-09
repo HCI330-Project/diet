@@ -242,7 +242,7 @@ body:not(:-moz-handler-blocked) fieldset {
 .footer {
   display: flex;
   position: absolute;
-  bottom: 10px;
+  bottom: 0px;
   width: 94%;
 
   color: #fafafa
