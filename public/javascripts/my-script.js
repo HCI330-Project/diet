@@ -61,5 +61,5 @@ male.addEventListener('click', () => {
 
 
 if (window.matchMedia('(display-mode: standalone)').matches) {
-    document.querySelector('.footer').setAttribute("style", "bottom: 0px;");
+    document.querySelector('.footer').setAttribute("style", "bottom: 0px; border: 1px solid blue;");
 }
