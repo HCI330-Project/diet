@@ -6,8 +6,7 @@ var foodSchema = new mongoose.Schema({
   calories: Number,
   proteins: Number,
   carbs: Number,
-  fat: Number,
-  img: String
+  fat: Number
 });
 
 module.exports = mongoose.model("Food", foodSchema);
