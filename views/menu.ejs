@@ -1,0 +1,112 @@
+<%- include("partials/header") %>
+
+<!-- <div class="d-flex justify-content-center text-center">
+  <h1>Menu:</h1>
+</div> -->
+
+<!-- <div class="d-flex justify-content-center text-center">
+  <h5>Your weight is: <%= weight %> lbs</h5>
+</div> -->
+
+<!-- <div class="d-flex justify-content-center text-center">
+  <h5>Your athletic multiple is: <%= multiple %></h5>
+</div> -->
+
+<!-- <div class="d-flex justify-content-center text-center">
+  <h5>Your total daily expenditure rate is: <%= weight * multiple %> calories</h5>
+</div> -->
+
+<%var balance = weight * multiple + surplus%>
+
+<%
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+}
+%>
+
+<%#
+0 - 15: protein sources: getRandomInt(0,15)
+15 - 27: carb sources: getRandomInt(15,27)
+27 - 33: fat sources: getRandomInt(27,33)
+%>
+
+
+<%if(goal ==1){ %>
+<%var surplus = 500;%>
+
+<!-- <div class="d-flex justify-content-center text-center align-items-center">
+  <h5>Your goal is to gain muscle so we will add 500 calories</h5>
+</div> -->
+
+<!-- <div class="d-flex justify-content-center text-center align-items-center">
+  <h5>You need to eat <%= weight * multiple + surplus %> calories today.</h5>
+</div> -->
+
+
+<%} else { %>
+<%var surplus = -500;%>
+<!-- <h5>Your goal is to burn fat so we will subtract 500 calories</h5> -->
+<!-- <div class="d-flex justify-content-center text-center align-items-center">
+  <h5>You need to eat <%= weight * multiple + surplus %> calories today.</h5>
+</div> -->
+<%}%>
+<br>
+
+
+<% for (i = 0; i<3; i++) { %>
+
+<%var proteinCal = Math.floor((weight * multiple + surplus)/3*0.4)%>
+<%var carbCal = Math.floor((weight * multiple + surplus)/3*0.4)%>
+<%var fatCal = Math.floor((weight * multiple + surplus)/3*0.2)%>
+
+<%var protein1 = food[getRandomInt(0,15)]%>
+<%var carb1 = food[getRandomInt(15,27)]%>
+<%var fat1 = food[getRandomInt(27,33)]%>
+
+<%var proteinQuant = proteinCal / protein1.calories%>
+<%var carbQuant = carbCal / carb1.calories%>
+<%var fatQuant = fatCal / fat1.calories%>
+
+<%var meal1Calories = proteinQuant*protein1.calories + carbQuant*carb1.calories + fatQuant*fat1.calories%>
+<%var meal1Proteins = proteinQuant*protein1.proteins + carbQuant*carb1.proteins + fatQuant*fat1.proteins%>
+<%var meal1Carbs = proteinQuant*protein1.carbs + carbQuant*carb1.carbs + fatQuant*fat1.carbs%>
+<%var meal1Fat = proteinQuant*protein1.fat + carbQuant*carb1.fat + fatQuant*fat1.fat%>
+
+
+<div class="d-flex justify-content-start pl-3 pl-lg-5 pb-3 text-center align-items-center futura-h">
+  <%if (i === 0) { %>
+  <h3><b>Breakfast :</b></h3>
+  <%} else if (i === 1) {%>
+  <h3><b>Lunch :</b></h3>
+  <%} else {%>
+  <h3><b>Dinner :</b></h3>
+  <%};%>
+</div>
+
+<div class="d-flex justify-content-start pl-5 pl-lg-5 text-center align-items-center pb-2 futura-hi">
+  <img class="pr-3" width="40px" height="40px" src="/food-icons/<%=protein1.img%>" />
+  <h7><%= proteinQuant.toPrecision(3) %>oz <%= protein1.name %></h7><br>
+</div>
+
+<div class=" d-flex justify-content-start pl-5 pl-lg-5 text-center align-items-center pb-2 futura-hi">
+  <img class="pr-3" width="40px" height="40px" src="/food-icons/<%=carb1.img%>" />
+  <h7><%= carbQuant.toPrecision(3) %>oz <%= carb1.name %></h7><br>
+</div>
+
+<div class="d-flex justify-content-start pl-5 pl-lg-5 text-center align-items-center pb-2 futura-hi">
+  <img class="pr-3" width="40px" height="40px" src="/food-icons/<%=fat1.img%>" />
+  <h7><%= fatQuant.toPrecision(3) %>oz <%= fat1.name %></h7><br>
+</div>
+<div
+  class="d-flex justify-content-center justify-content-lg-start pl-lg-5 pb-5 text-center align-items-center futura-p">
+  <p class="pr-2"><%= meal1Calories %> calories <span>&#8226;</span> <%= Math.floor(meal1Proteins) %>g protein
+    <span>&#8226;</span> <%= Math.floor(meal1Carbs) %>g carbs <span>&#8226;</span> <%= Math.floor(meal1Fat) %>g fat</p>
+  <br>
+  <br>
+</div>
+
+<%}%>
+
+<%- include("partials/footer") %>

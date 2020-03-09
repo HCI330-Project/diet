@@ -1,0 +1,77 @@
+<%- include("partials/header") %>
+
+<div class="d-flex justify-content-center align-items-center pt-5" style="height:50%">
+  <form action="/" method="POST">
+    <div class="step2 hide">
+      <div>
+        <h5 class="text-center pb-2 futura-h"><b>Weight:</b></h5>
+      </div>
+
+      <div class="d-flex justify-content-center pb-3">
+        <input class="futura-hi" id="rounded-corner" type="number" id="weight" name="weight" placeholder="lbs" min="46"
+          max="1400" required><br>
+      </div>
+
+    </div>
+    <br>
+    <div class="step1">
+      <div>
+        <h5 class="text-center pb-2 futura-h"><b>I would like to:</b></h5>
+      </div>
+
+      <div class="pb-3">
+        <div class="toggle">
+          <input class="futura-h" type="radio" id="gainMuscle" name="goal" value="1"
+            onclick="document.getElementById('loseFat').checked = false">
+          <label for="gainMuscle" style="width:160px; background-color: black; color: #FFF;">Gain Muscle</label>
+
+          <input class="futura-h" type="radio" id="loseFat" name="goal" value="0"
+            onclick="document.getElementById('gainMuscle').checked = false">
+          <label for="loseFat" style="width:160px; margin-left:10px; background-color: black; color: #FFF;">Burn
+            Fat</label>
+          <br>
+        </div>
+      </div>
+    </div>
+
+    <div class="step2 hide">
+      <div>
+        <h5 class="text-center pb-2 futura-h"> Excercise level:</h5>
+      </div>
+
+      <div class="toggle pb-3">
+        <input type="radio" name="sizeBy" value="11" id="sizeWeight" />
+        <label for="sizeWeight" style="
+          width: 70px;
+          padding-right: 0px;
+          padding-left: 8px;
+          height: 66px;" class="mr-3">
+          <img id="sitter-img" class="pr-2" width="40px" height="40px" src="/food-icons/sitter.svg" />
+        </label>
+        <input type="radio" name="sizeBy" value="13" id="sizeDimensions" />
+        <label for="sizeDimensions" style="
+          width: 70px;
+          padding-right: 0px;
+          padding-left: 8px;
+          height: 66px;" class="mr-3">
+          <img id="walker-img" class="pr-2" width="40px" height="40px" src="/food-icons/walker.svg" />
+        </label>
+        <input type="radio" name="sizeBy" value="15" id="sizeDimension" />
+        <label for="sizeDimension" style="
+          width: 70px;
+          padding-right: 0px;
+          padding-left: 8px;
+          height: 66px;" class="mr-3">
+          <img id="runner-img" class="pr-2" width="40px" height="40px" src="/food-icons/runner.svg" />
+        </label>
+      </div>
+
+      <div class="d-flex justify-content-end ">
+        <button class="home-go futura-h" type="submit" name="button">Go!</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<%- include("partials/footer") %>
