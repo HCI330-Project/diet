@@ -85,7 +85,7 @@ body:not(:-moz-handler-blocked) fieldset {
 .toggle input {
   width: 0;
   height: 0;
-  /* position: absolute;*/
+  position: absolute;
   left: -9999px;
 }
 
