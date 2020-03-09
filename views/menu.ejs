@@ -1,20 +1,38 @@
 <%- include("partials/header") %>
 
+<<<<<<< HEAD
 <!-- <div class="d-flex justify-content-center text-center">
+=======
+<div class="d-flex justify-content-center text-center">
+>>>>>>> master
   <h1>Menu:</h1>
 </div> -->
 
+<<<<<<< HEAD
 <!-- <div class="d-flex justify-content-center text-center">
   <h5>Your weight is: <%= weight %> lbs</h5>
 </div> -->
+=======
+<div class="d-flex justify-content-center text-center">
+  <h5>Your weight is: <%= weight %> lbs</h5>
+</div>
+>>>>>>> master
 
 <!-- <div class="d-flex justify-content-center text-center">
   <h5>Your athletic multiple is: <%= multiple %></h5>
+<<<<<<< HEAD
 </div> -->
 
 <!-- <div class="d-flex justify-content-center text-center">
   <h5>Your total daily expenditure rate is: <%= weight * multiple %> calories</h5>
 </div> -->
+=======
+</div>
+
+<div class="d-flex justify-content-center text-center">
+  <h5>Your total daily expenditure rate is: <%= weight * multiple %> calories</h5>
+</div>
+>>>>>>> master
 
 <%var balance = weight * multiple + surplus%>
 
@@ -36,6 +54,7 @@ function getRandomInt(min, max) {
 <%if(goal ==1){ %>
 <%var surplus = 500;%>
 
+<<<<<<< HEAD
 <!-- <div class="d-flex justify-content-center text-center align-items-center">
   <h5>Your goal is to gain muscle so we will add 500 calories</h5>
 </div> -->
@@ -43,14 +62,28 @@ function getRandomInt(min, max) {
 <!-- <div class="d-flex justify-content-center text-center align-items-center">
   <h5>You need to eat <%= weight * multiple + surplus %> calories today.</h5>
 </div> -->
+=======
+<div class="d-flex justify-content-center text-center align-items-center">
+  <h5>Your goal is to gain muscle so we will add 500 calories</h5>
+</div>
+
+<div class="d-flex justify-content-center text-center align-items-center">
+  <h5>You should eat: <%= weight * multiple + surplus %> calories today in order to move toward your goals.</h5>
+</div>
+>>>>>>> master
 
 
 <%} else { %>
 <%var surplus = -500;%>
+<<<<<<< HEAD
 <!-- <h5>Your goal is to burn fat so we will subtract 500 calories</h5> -->
 <!-- <div class="d-flex justify-content-center text-center align-items-center">
   <h5>You need to eat <%= weight * multiple + surplus %> calories today.</h5>
 </div> -->
+=======
+<h5>Your goal is to burn fat so we will subtract 500 calories</h5>
+<h5>You should eat <%= weight * multiple + surplus %> calories today in order to move toward your goals.</h5>
+>>>>>>> master
 <%}%>
 <br>
 
@@ -74,6 +107,7 @@ function getRandomInt(min, max) {
 <%var meal1Carbs = proteinQuant*protein1.carbs + carbQuant*carb1.carbs + fatQuant*fat1.carbs%>
 <%var meal1Fat = proteinQuant*protein1.fat + carbQuant*carb1.fat + fatQuant*fat1.fat%>
 
+<<<<<<< HEAD
 
 <div class="d-flex justify-content-start pl-3 pl-lg-5 pb-3 text-center align-items-center futura-h">
   <%if (i === 0) { %>
@@ -87,6 +121,13 @@ function getRandomInt(min, max) {
 
 <div class="d-flex justify-content-start pl-5 pl-lg-5 text-center align-items-center pb-2 futura-hi">
   <img class="pr-3" width="40px" height="40px" src="/food-icons/<%=protein1.img%>" />
+=======
+<div class="d-flex justify-content-center justify-content-lg-start pl-lg-5 text-center align-items-center">
+  <h1>Meal <%=i+1%> :</h1>
+</div>
+
+<div class="d-flex justify-content-center justify-content-lg-start pl-lg-5 text-center align-items-center">
+>>>>>>> master
   <h7><%= proteinQuant.toPrecision(3) %>oz <%= protein1.name %></h7><br>
 </div>
 
@@ -108,5 +149,24 @@ function getRandomInt(min, max) {
 </div>
 
 <%}%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <%- include("partials/footer") %>
