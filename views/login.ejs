@@ -1,12 +1,7 @@
 <%- include("partials/header") %>
 
 <section id="form">
-
-
-
-  <div class="d-flex justify-content-center pb-3  text-center  align-items-center">
-
-
+  <div class="d-flex justify-content-center pb-3  text-center  align-items-center futura-h">
     <form action="/login" method="post">
       <div>
         <h5 class="text-center pt-5">Username:</h5>
@@ -14,7 +9,7 @@
 
       <div id="form-field" class="pb-4">
         <!-- <label for="username">Username:</label><br> -->
-        <input id="rounded-corner" type="text" name="username" placeholder="username">
+        <input class="futura-hi" id="rounded-corner" type="text" name="username" placeholder="username">
       </div>
 
       <div>
@@ -22,20 +17,14 @@
       </div>
       <div id="form-field" class="pb-4">
         <!-- <label for="password">Password:</label><br> -->
-        <input id="rounded-corner" type="password" name="password" placeholder="password">
+        <input class="futura-hi" id="rounded-corner" type="password" name="password" placeholder="password">
       </div>
 
       <div class="d-flex justify-content-center pb-4">
-        <button class="btn btn-primary" type="submit" name="button">Login</button>
+        <button class="register-go" type="submit" name="button">Login</button>
       </div>
-
-      <a href="/register">Sign Up!</a>
 
     </form>
   </div>
-
-
 </section>
-
-
 <%- include("partials/footer") %>
