@@ -22,7 +22,7 @@ The second prototype entailed a profile page with two interfaces. If the users a
 
 Round 3 entailed giving Swole a responsive interface that is particularly mobile-centric. By detecting the page’s max-width, the webpage will slightly readjust on mobile devices. Consequently, the look will be slightly different between platforms, but function the same.
 
-###Reflection
+### Reflection
 
 We have built a fully functional fitness diet website with both front-end and back-end components, including a responsive website, page routings, databases for user registration and foods and a DigitalOcean server hosting our website. Everything is working from what users can see on the website, to what users cannot see in the server.
 
