@@ -58,3 +58,8 @@ burnFat.addEventListener('click', () => {
 male.addEventListener('click', () => {
     male.checked = true;
 });
+
+
+if (window.matchMedia('(display-mode: standalone)').matches) {
+    document.querySelector('.footer').setAttribute("style", "bottom: 0px;");
+}
