@@ -217,6 +217,7 @@ body:not(:-moz-handler-blocked) fieldset {
 }
 
 .home-go {
+  text-align: center;
   display: inline-block;
   height: 60px;
   width: 60px;
@@ -226,6 +227,7 @@ body:not(:-moz-handler-blocked) fieldset {
 }
 
 .register-go {
+  text-align: center;
   display: inline-block;
   height: 50px;
   width: 160px;
