@@ -246,3 +246,13 @@ body:not(:-moz-handler-blocked) fieldset {
   font-family: 'Futura';
   font-size: 15px;
 }
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;
+  /* Footer height */
+}
