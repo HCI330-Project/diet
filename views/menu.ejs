@@ -73,9 +73,12 @@ function getRandomInt(min, max) {
 <%var discrepancy = perMealCal - proteinQ*protein.calories - carbQ*carb.calories - fatQ*fat.calories%>
 <!--find the cloest substitute-->
 <%
-var sub = food.reduce(function(prev, curr) {
-  return (Math.abs(curr.calories - discrepancy) < Math.abs(prev.calories - discrepancy) ? curr : prev);
-});
+var sub = protein;
+while ([protein, carb, fat].includes(sub)) {
+  sub = food.reduce(function(prev, curr) {
+    return (Math.abs(curr.calories - discrepancy) < Math.abs(prev.calories - discrepancy) ? curr : prev);
+  });
+}
 %>
 <%var mealCal = proteinQ*protein.calories + carbQ*carb.calories + fatQ*fat.calories + sub.calories%>
 <%var mealProtein = proteinQ*protein.proteins + carbQ*carb.proteins + fatQ*fat.proteins + sub.proteins%>
