@@ -107,27 +107,51 @@ var sub = food.reduce(function(prev, curr) {
 <%if (proteinQ != 0) {%>
 <div class="d-flex justify-content-start pl-5 pl-lg-5 text-center align-items-center pb-2 futura-hi">
   <img class="pr-3" width="40px" height="40px" src="/food-icons/<%=protein.img%>" />
+  <%if (proteinQ*protein.quant > 1 && protein.unit.length != 0) {%>
+  <h7><%= proteinQ*protein.quant %> <%=protein.unit%>s <%= protein.name %>s</h7><br>
+  <%} else if (proteinQ*protein.quant > 1 && protein.unit.length == 0) {%>
+  <h7><%= proteinQ*protein.quant %> <%=protein.unit%> <%= protein.name %>s</h7><br>
+  <%} else {%>
   <h7><%= proteinQ*protein.quant %> <%=protein.unit%> <%= protein.name %></h7><br>
+  <%};%>
 </div>
 <%};%>
 
 <%if (carbQ != 0) {%>
 <div class=" d-flex justify-content-start pl-5 pl-lg-5 text-center align-items-center pb-2 futura-hi">
   <img class="pr-3" width="40px" height="40px" src="/food-icons/<%=carb.img%>" />
+  <%if (carbQ*carb.quant > 1 && carb.unit.length != 0) {%>
+  <h7><%= carbQ*carb.quant %> <%=carb.unit%>s <%= carb.name %>s</h7><br>
+  <%} else if (carbQ*protein.quant > 1 && carb.unit.length == 0) {%>
+  <h7><%= carbQ*carb.quant %> <%=carb.unit%> <%= carb.name %>s</h7><br>
+  <%} else {%>
   <h7><%= carbQ*carb.quant %> <%=carb.unit%> <%= carb.name %></h7><br>
+  <%};%>
 </div>
 <%};%>
 
 <%if (fatQ != 0) {%>
 <div class="d-flex justify-content-start pl-5 pl-lg-5 text-center align-items-center pb-2 futura-hi">
   <img class="pr-3" width="40px" height="40px" src="/food-icons/<%=fat.img%>" />
+  <%if (fatQ*fat.quant > 1 && fat.unit.length != 0) {%>
+  <h7><%= fatQ*fat.quant %> <%=fat.unit%>s <%= fat.name %>s</h7><br>
+  <%} else if (fatQ*fat.quant > 1 && fat.unit.length == 0) {%>
+  <h7><%= fatQ*fat.quant %> <%=protein.unit%> <%= protein.name %>s</h7><br>
+  <%} else {%>
   <h7><%= fatQ*fat.quant %> <%=fat.unit%> <%= fat.name %></h7><br>
+  <%};%>
 </div>
 <%};%>
 
 <div class="d-flex justify-content-start pl-5 pl-lg-5 text-center align-items-center pb-2 futura-hi">
   <img class="pr-3" width="40px" height="40px" src="/food-icons/<%=fat.img%>" />
+  <%if (sub.quant > 1 && sub.unit.length != 0) {%>
+  <h7><%= sub.quant %> <%=sub.unit%>s <%= sub.name %>s</h7><br>
+  <%} else if (sub.quant > 1 && sub.unit.length == 0) {%>
+  <h7><%= sub.quant %> <%=sub.unit%> <%= sub.name %>s</h7><br>
+  <%} else {%>
   <h7><%= sub.quant %> <%=sub.unit%> <%= sub.name %></h7><br>
+  <%};%>
 </div>
 
 <div class="d-flex justify-content-center justify-content-lg-start pl-lg-5 pb-5 text-center align-items-center futura-p">

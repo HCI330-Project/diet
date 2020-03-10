@@ -182,7 +182,7 @@ var data = [{
   {
     name: 'Russett Potato',
     quant: 1,
-    unit: 'small',
+    unit: '',
     calories: 110,
     proteins: 3,
     carbs: 26,
@@ -212,7 +212,7 @@ var data = [{
   {
     name: 'Sweet Potato',
     quant: 1,
-    unit: 'small',
+    unit: '',
     calories: 54,
     proteins: 1,
     carbs: 12,
