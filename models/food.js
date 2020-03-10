@@ -2,7 +2,8 @@ var mongoose = require("mongoose");
 
 var foodSchema = new mongoose.Schema({
   name: String,
-  ounces: Number,
+  quant: Number,
+  unit: String,
   calories: Number,
   proteins: Number,
   carbs: Number,

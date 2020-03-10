@@ -3,7 +3,8 @@ var Food = require('./models/food');
 
 var data = [{
     name: 'Canned Tuna',
-    ounces: 0.33,
+    quant: 1,
+    unit: '',
     calories: 131,
     proteins: 6,
     carbs: 3,
@@ -12,7 +13,8 @@ var data = [{
   },
   {
     name: 'Ground Beef (98/2)',
-    ounces: 0.33,
+    quant: 0.33,
+    unit: 'oz',
     calories: 106,
     proteins: 21,
     carbs: 0,
@@ -21,7 +23,8 @@ var data = [{
   },
   {
     name: 'Ground Turkey',
-    ounces: 4.4,
+    quant: 4.4,
+    unit: 'oz',
     calories: 130,
     proteins: 20,
     carbs: 0,
@@ -30,7 +33,8 @@ var data = [{
   },
   {
     name: 'Chicken Thigh',
-    ounces: 4,
+    quant: 1,
+    unit: 'pc',
     calories: 160,
     proteins: 24,
     carbs: 0,
@@ -39,7 +43,8 @@ var data = [{
   },
   {
     name: 'Chicken Breast',
-    ounces: 4,
+    quant: 1,
+    unit: 'pc',
     calories: 130,
     proteins: 28,
     carbs: 0,
@@ -48,7 +53,8 @@ var data = [{
   },
   {
     name: 'Canned Tuna',
-    ounces: 4,
+    quant: 1,
+    unit: '',
     calories: 120,
     proteins: 30,
     carbs: 0,
@@ -57,7 +63,8 @@ var data = [{
   },
   {
     name: 'Beef Sirloin',
-    ounces: 4,
+    quant: 1,
+    unit: 'pc',
     calories: 210,
     proteins: 23,
     carbs: 0,
@@ -66,7 +73,8 @@ var data = [{
   },
   {
     name: 'Pork Tenderloin',
-    ounces: 4,
+    quant: 1,
+    unit: 'pc',
     calories: 185,
     proteins: 32,
     carbs: 0,
@@ -75,7 +83,8 @@ var data = [{
   },
   {
     name: 'Top Sirloin',
-    ounces: 4,
+    quant: 1,
+    unit: 'pc',
     calories: 180,
     proteins: 30,
     carbs: 0,
@@ -84,7 +93,8 @@ var data = [{
   },
   {
     name: 'Egg',
-    ounces: 1.7,
+    quant: 1,
+    unit: 'regular sized',
     calories: 70,
     proteins: 5,
     carbs: 0,
@@ -93,7 +103,8 @@ var data = [{
   },
   {
     name: 'Greek Yogurt',
-    ounces: 3.1,
+    quant: 1,
+    unit: 'cup',
     calories: 150,
     proteins: 5,
     carbs: 5,
@@ -102,7 +113,8 @@ var data = [{
   },
   {
     name: 'Kashi GoLean w/ Milk',
-    ounces: 1.9,
+    quant: 1,
+    unit: 'cup',
     calories: 180 + 40,
     proteins: 12 + 14,
     carbs: 40 + 1,
@@ -111,7 +123,8 @@ var data = [{
   },
   {
     name: 'Protein Shake',
-    ounces: 11,
+    quant: 1,
+    unit: 'bottle',
     calories: 160,
     proteins: 30,
     carbs: 5,
@@ -120,7 +133,8 @@ var data = [{
   },
   {
     name: 'Tofu',
-    ounces: 3,
+    quant: 1,
+    unit: 'pc',
     calories: 70,
     proteins: 8,
     carbs: 1,
@@ -129,7 +143,7 @@ var data = [{
   },
   // {
   //   name: "Skim Milk",
-  //   ounces: 4,
+  //   quant: 4,
   //   calories: 40,
   //   proteins: 4,
   //   carbs: 6,
@@ -137,7 +151,8 @@ var data = [{
   // },
   {
     name: 'Cottage Cheese',
-    ounces: 3.5,
+    quant: 3.5,
+    unit: 'oz',
     calories: 140,
     proteins: 14,
     carbs: 1,
@@ -146,7 +161,8 @@ var data = [{
   },
   {
     name: 'White Rice',
-    ounces: 3,
+    quant: 1,
+    unit: 'cup',
     calories: 250,
     proteins: 5,
     carbs: 0,
@@ -155,7 +171,8 @@ var data = [{
   },
   {
     name: 'Corn Tortilla',
-    ounces: 0.88,
+    quant: 1,
+    unit: 'pc',
     calories: 45,
     proteins: 1,
     carbs: 11,
@@ -164,7 +181,8 @@ var data = [{
   },
   {
     name: 'Russett Potato',
-    ounces: 7.5,
+    quant: 1,
+    unit: 'small',
     calories: 110,
     proteins: 3,
     carbs: 26,
@@ -173,7 +191,8 @@ var data = [{
   },
   {
     name: 'Oatmeal',
-    ounces: 1.2,
+    quant: 1,
+    unit: 'cup',
     calories: 130,
     proteins: 5,
     carbs: 23,
@@ -182,7 +201,8 @@ var data = [{
   },
   {
     name: 'Grits',
-    ounces: 1.4,
+    quant: 1,
+    unit: 'bowl',
     calories: 130,
     proteins: 3,
     carbs: 29,
@@ -191,7 +211,8 @@ var data = [{
   },
   {
     name: 'Sweet Potato',
-    ounces: 2.1,
+    quant: 1,
+    unit: 'small',
     calories: 54,
     proteins: 1,
     carbs: 12,
@@ -200,7 +221,8 @@ var data = [{
   },
   {
     name: 'Pasta',
-    ounces: 2,
+    quant: 2,
+    unit: 'oz',
     calories: 200,
     proteins: 7,
     carbs: 42,
@@ -209,7 +231,8 @@ var data = [{
   },
   {
     name: 'Whole Wheat Bread',
-    ounces: 1,
+    quant: 1,
+    unit: 'slice',
     calories: 69,
     proteins: 2,
     carbs: 13,
@@ -218,7 +241,8 @@ var data = [{
   },
   {
     name: 'Quinoa',
-    ounces: 3.5,
+    quant: 1,
+    unit: 'bowl',
     calories: 374,
     proteins: 13,
     carbs: 68,
@@ -227,7 +251,8 @@ var data = [{
   },
   {
     name: 'Kidney Beans',
-    ounces: 7.1,
+    quant: 1,
+    unit: 'cup',
     calories: 225,
     proteins: 15,
     carbs: 40,
@@ -236,7 +261,8 @@ var data = [{
   },
   {
     name: 'Apple',
-    ounces: 6.4,
+    quant: 1,
+    unit: '',
     calories: 94,
     proteins: 0,
     carbs: 25,
@@ -245,7 +271,8 @@ var data = [{
   },
   {
     name: 'Banana',
-    ounces: 4.9,
+    quant: 1,
+    unit: '',
     calories: 120,
     proteins: 1,
     carbs: 22,
@@ -254,7 +281,8 @@ var data = [{
   },
   {
     name: 'Almond Butter',
-    ounces: 0.5,
+    quant: 0.5,
+    unit: 'oz',
     calories: 180,
     proteins: 3,
     carbs: 2,
@@ -263,7 +291,8 @@ var data = [{
   },
   {
     name: 'Peanut Butter',
-    ounces: 1.1,
+    quant: 2,
+    unit: 'tbsp',
     calories: 200,
     proteins: 8,
     carbs: 7,
@@ -272,7 +301,8 @@ var data = [{
   },
   {
     name: 'Olive Oil',
-    ounces: 0.5,
+    quant: 1,
+    unit: 'tbsp',
     calories: 120,
     proteins: 0,
     carbs: 0,
@@ -281,7 +311,8 @@ var data = [{
   },
   {
     name: 'Coconut Oil',
-    ounces: 0.5,
+    quant: 1,
+    unit: 'tbsp',
     calories: 120,
     proteins: 0,
     carbs: 0,
@@ -290,7 +321,8 @@ var data = [{
   },
   {
     name: 'Avocado',
-    ounces: 5.3,
+    quant: 1,
+    unit: '',
     calories: 232,
     proteins: 3,
     carbs: 12,
@@ -299,7 +331,8 @@ var data = [{
   },
   {
     name: 'Almonds',
-    ounces: 0.5,
+    quant: 1,
+    unit: 'handful',
     calories: 76,
     proteins: 2,
     carbs: 2,
@@ -308,7 +341,8 @@ var data = [{
   },
   {
     name: 'Cashews',
-    ounces: 1,
+    quant: 1,
+    unit: 'handful',
     calories: 170,
     proteins: 5,
     carbs: 8,
