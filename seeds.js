@@ -63,8 +63,8 @@ var data = [{
   },
   {
     name: 'Beef Sirloin',
-    quant: 1,
-    unit: 'pc',
+    quant: 4,
+    unit: 'oz',
     calories: 210,
     proteins: 23,
     carbs: 0,
@@ -73,8 +73,8 @@ var data = [{
   },
   {
     name: 'Pork Tenderloin',
-    quant: 1,
-    unit: 'pc',
+    quant: 4,
+    unit: 'oz',
     calories: 185,
     proteins: 32,
     carbs: 0,
@@ -83,8 +83,8 @@ var data = [{
   },
   {
     name: 'Top Sirloin',
-    quant: 1,
-    unit: 'pc',
+    quant: 4,
+    unit: 'oz',
     calories: 180,
     proteins: 30,
     carbs: 0,
@@ -94,7 +94,7 @@ var data = [{
   {
     name: 'Egg',
     quant: 1,
-    unit: 'regular sized',
+    unit: '',
     calories: 70,
     proteins: 5,
     carbs: 0,
