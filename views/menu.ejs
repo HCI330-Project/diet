@@ -54,26 +54,48 @@ function getRandomInt(min, max) {
 <%}%>
 <br>
 
+<!--calculate calories-->
+<%var totalCal = Math.floor(weight * multiple + surplus)%>
+<%var perMealCal = Math.floor(totalCal/3)%>
+<%var proteinCal = Math.floor(perMealCal*0.4)%>
+<%var carbCal = Math.floor(perMealCal*0.4)%>
+<%var fatCal = Math.floor(perMealCal*0.2)%>
 
+<!--generate menu-->
 <% for (i = 0; i<3; i++) { %>
 
-<%var proteinCal = Math.floor((weight * multiple + surplus)/3*0.4)%>
-<%var carbCal = Math.floor((weight * multiple + surplus)/3*0.4)%>
-<%var fatCal = Math.floor((weight * multiple + surplus)/3*0.2)%>
+<%var protein = food[getRandomInt(0,15)]%>
+<%var carb = food[getRandomInt(15,27)]%>
+<%var fat = food[getRandomInt(27,33)]%>
+<%var proteinQ = Math.floor(proteinCal / protein.calories)%>
+<%var carbQ = Math.floor(carbCal / carb.calories)%>
+<%var fatQ = Math.floor(fatCal / fat.calories)%>
+<%var discrepancy = perMealCal - proteinQ*protein.calories - carbQ*carb.calories - fatQ*fat.calories%>
+<!--find the cloest substitute-->
+<%
+var sub = protein;
+while ([protein, carb, fat].includes(sub)) {
+  sub = food.reduce(function(prev, curr) {
+    return (Math.abs(curr.calories - discrepancy) < Math.abs(prev.calories - discrepancy) ? curr : prev);
+  });
+}
+%>
+<%var mealCal = proteinQ*protein.calories + carbQ*carb.calories + fatQ*fat.calories + sub.calories%>
+<%var mealProtein = proteinQ*protein.proteins + carbQ*carb.proteins + fatQ*fat.proteins + sub.proteins%>
+<%var mealCarb = proteinQ*protein.carbs + carbQ*carb.carbs + fatQ*fat.carbs + sub.carbs%>
+<%var mealFat = proteinQ*protein.fat + carbQ*carb.fat + fatQ*fat.fat + sub.fat%>
 
-<%var protein1 = food[getRandomInt(0,15)]%>
-<%var carb1 = food[getRandomInt(15,27)]%>
-<%var fat1 = food[getRandomInt(27,33)]%>
-
-<%var proteinQuant = proteinCal / protein1.calories%>
-<%var carbQuant = carbCal / carb1.calories%>
-<%var fatQuant = fatCal / fat1.calories%>
-
-<%var meal1Calories = proteinQuant*protein1.calories + carbQuant*carb1.calories + fatQuant*fat1.calories%>
-<%var meal1Proteins = proteinQuant*protein1.proteins + carbQuant*carb1.proteins + fatQuant*fat1.proteins%>
-<%var meal1Carbs = proteinQuant*protein1.carbs + carbQuant*carb1.carbs + fatQuant*fat1.carbs%>
-<%var meal1Fat = proteinQuant*protein1.fat + carbQuant*carb1.fat + fatQuant*fat1.fat%>
-
+<!-- <div class="test">
+  totalCal: <%=totalCal%><br>
+  perMealCal: <%=perMealCal%><br>
+  proteinCal: <%=proteinCal%><br>
+  carbCal: <%=carbCal%><br>
+  fatCal: <%=fatCal%><br>
+  proteinQ: <%=proteinQ%><br>
+  carbQ: <%=carbQ%><br>
+  fatQ: <%=fatQ%><br>
+  discrepancy: <%=discrepancy%><br>
+</div> -->
 
 <div class="d-flex justify-content-start pl-3 pl-lg-5 pb-3 text-center align-items-center futura-h">
   <%if (i === 0) { %>
@@ -85,24 +107,59 @@ function getRandomInt(min, max) {
   <%};%>
 </div>
 
+<%if (proteinQ != 0) {%>
 <div class="d-flex justify-content-start pl-5 pl-lg-5 text-center align-items-center pb-2 futura-hi">
-  <img class="pr-3" width="40px" height="40px" src="/food-icons/<%=protein1.img%>" />
-  <h7><%= proteinQuant.toPrecision(3) %>oz <%= protein1.name %></h7><br>
+  <img class="pr-3" width="40px" height="40px" src="/food-icons/<%=protein.img%>" />
+  <%if (proteinQ*protein.quant > 1 && protein.unit.length != 0 && protein.unit != 'oz') {%>
+  <h7><%= proteinQ*protein.quant %> <%=protein.unit%>s <%= protein.name %></h7><br>
+  <%} else if (proteinQ*protein.quant > 1 && protein.unit.length == 0) {%>
+  <h7><%= proteinQ*protein.quant %> <%=protein.unit%> <%= protein.name %>s</h7><br>
+  <%} else {%>
+  <h7><%= proteinQ*protein.quant %> <%=protein.unit%> <%= protein.name %></h7><br>
+  <%};%>
 </div>
+<%};%>
 
+<%if (carbQ != 0) {%>
 <div class=" d-flex justify-content-start pl-5 pl-lg-5 text-center align-items-center pb-2 futura-hi">
-  <img class="pr-3" width="40px" height="40px" src="/food-icons/<%=carb1.img%>" />
-  <h7><%= carbQuant.toPrecision(3) %>oz <%= carb1.name %></h7><br>
+  <img class="pr-3" width="40px" height="40px" src="/food-icons/<%=carb.img%>" />
+  <%if (carbQ*carb.quant > 1 && carb.unit.length != 0 && carb.unit != 'oz') {%>
+  <h7><%= carbQ*carb.quant %> <%=carb.unit%>s <%= carb.name %></h7><br>
+  <%} else if (carbQ*carb.quant > 1 && carb.unit.length == 0) {%>
+  <h7><%= carbQ*carb.quant %> <%=carb.unit%> <%= carb.name %>s</h7><br>
+  <%} else {%>
+  <h7><%= carbQ*carb.quant %> <%=carb.unit%> <%= carb.name %></h7><br>
+  <%};%>
 </div>
+<%};%>
+
+<%if (fatQ != 0) {%>
+<div class="d-flex justify-content-start pl-5 pl-lg-5 text-center align-items-center pb-2 futura-hi">
+  <img class="pr-3" width="40px" height="40px" src="/food-icons/<%=fat.img%>" />
+  <%if (fatQ*fat.quant > 1 && fat.unit.length != 0 && fat.unit != 'oz') {%>
+  <h7><%= fatQ*fat.quant %> <%=fat.unit%>s <%= fat.name %></h7><br>
+  <%} else if (fatQ*fat.quant > 1 && fat.unit.length == 0) {%>
+  <h7><%= fatQ*fat.quant %> <%=fat.unit%> <%= fat.name %>s</h7><br>
+  <%} else {%>
+  <h7><%= fatQ*fat.quant %> <%=fat.unit%> <%= fat.name %></h7><br>
+  <%};%>
+</div>
+<%};%>
 
 <div class="d-flex justify-content-start pl-5 pl-lg-5 text-center align-items-center pb-2 futura-hi">
-  <img class="pr-3" width="40px" height="40px" src="/food-icons/<%=fat1.img%>" />
-  <h7><%= fatQuant.toPrecision(3) %>oz <%= fat1.name %></h7><br>
+  <img class="pr-3" width="40px" height="40px" src="/food-icons/<%=sub.img%>" />
+  <%if (sub.quant > 1 && sub.unit.length != 0 && sub.unit != 'oz') {%>
+  <h7><%= sub.quant %> <%=sub.unit%>s <%= sub.name %></h7><br>
+  <%} else if (sub.quant > 1 && sub.unit.length == 0) {%>
+  <h7><%= sub.quant %> <%=sub.unit%> <%= sub.name %>s</h7><br>
+  <%} else {%>
+  <h7><%= sub.quant %> <%=sub.unit%> <%= sub.name %></h7><br>
+  <%};%>
 </div>
-<div
-  class="d-flex justify-content-center justify-content-lg-start pl-lg-5 pb-5 text-center align-items-center futura-p">
-  <p class="pr-2"><%= meal1Calories %> calories <span>&#8226;</span> <%= Math.floor(meal1Proteins) %>g protein
-    <span>&#8226;</span> <%= Math.floor(meal1Carbs) %>g carbs <span>&#8226;</span> <%= Math.floor(meal1Fat) %>g fat</p>
+
+<div class="d-flex justify-content-center justify-content-lg-start pl-lg-5 pb-5 text-center align-items-center futura-p">
+  <p class="pr-2"><%= mealCal %> calories <span>&#8226;</span> <%= mealProtein %>g protein
+    <span>&#8226;</span> <%= mealCarb %>g carbs <span>&#8226;</span> <%= mealFat %>g fat</p>
   <br>
   <br>
 </div>
