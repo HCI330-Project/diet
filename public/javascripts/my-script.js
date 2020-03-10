@@ -66,3 +66,13 @@ const isInStandaloneMode = () =>
 if (isInStandaloneMode()) {
     document.querySelector('.footer').setAttribute("style", "bottom: 0px;");
 }
+
+
+
+var iOS = !!navigator.platform && /iPhone/.test(navigator.platform);
+if (iOS) {
+    document.querySelector('link[rel="manifest"]').setAttribute("rel", "no-on-ios");
+    console.log("ios detected")
+} else {
+    console.log("not an ios device")
+}
