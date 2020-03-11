@@ -22,15 +22,22 @@ The second prototype entailed a profile page with two interfaces. If the users a
 
 Round 3 entailed giving Swole a responsive interface that is particularly mobile-centric. By detecting the page’s max-width, the webpage will slightly readjust on mobile devices. Consequently, the look will be slightly different between platforms, but function the same.
 
+There are some additional things we have implemented that are not on the required list.
+
+* We set up a DigitalOcean server to host our website.
+* We use NodeJS and Express to route our pages.
+* We set up databases to store user information and food items in order to make our website fully functional.
+* We make a progressive web application that can be installed on any platform that uses a standards-compliant browser.
+
 ### Reflection
 
 We have built a fully functional fitness diet website with both front-end and back-end components, including a responsive website, page routings, databases for user registration and foods and a DigitalOcean server hosting our website. Everything is working from what users can see on the website, to what users cannot see in the server.
 
-If we had more time, we add more food items to our database, and provide better suggestions with some improved algorithms. More features like food options or alternatives, allergies and recipe suggestions are also some nice-to-haves.
+If we had more time, we plan to add more food items to our database, and provide better suggestions with some improved algorithms. More features like food options or alternatives, allergies and recipe suggestions are also some nice-to-haves.
 
 ### Links
 
 - [Github](https://github.com/HCI330-Project/diet/tree/master)
 - [Website](http://159.89.227.172:3000/)
-- Instructions for running your app (including how your prototype is best viewed).
+- Our website works on any device. Go to our [website](http://159.89.227.172:3000/), choose your fitness goal, enter your weight, and voila! You have a nice menu for today to reach your fitness goal. You can also choose to sign up to our site and login at any time. 
 
