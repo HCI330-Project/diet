@@ -1,5 +1,7 @@
 # Swole Project Report
 
+<h1><span style="color:red">add screenshots !!!!</span></h1>
+
 ### Problem & Related Work
 
 In a busy world, society regrettably neglects fitness. With the World Health Organization claiming 20% of deaths stem from dietary risks, humanity is falling to preventable ailments. Despite awareness, hardly anyone commits to a solution since few diets prioritize nutritional moderation. Humanity dreams of becoming healthy, searching for charming, easy diets; in reality, fitness strictly demands a nutritionally balanced lifestyle. Until a sturdy fitness plan earns society's respect, the epidemic will resume on its trajectory. Current inventions include intake-tracking calculators, but do not curate meals. MyFitnessPal tracks daily macros, but leaves users without food suggestions. Meanwhile, Weight Watchers tracks food via a point system, but only suggests affiliated food brands. Swole promises a food itinerary one must follow per personal data collection. Meal plans have calories divided between proteins, carbohydrates and fats to sustain individuals. Users will assume weight goals are reachable per a simple layout, matching the developers’ intentions.
