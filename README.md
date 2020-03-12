@@ -29,6 +29,10 @@ There are some additional things we have implemented that are not on the require
 * We set up databases to store user information and food items in order to make our website fully functional.
 * We make a progressive web application that can be installed on any platform that uses a standards-compliant browser.
 
+### Design Process
+
+![Front page version 1](images/front1.jpeg =500x)
+
 ### Reflection
 
 We have built a fully functional fitness diet website with both front-end and back-end components, including a responsive website, page routings, databases for user registration and foods and a DigitalOcean server hosting our website. Everything is working from what users can see on the website, to what users cannot see in the server.
