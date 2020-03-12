@@ -45,10 +45,9 @@ There are some additional things we have implemented that are not on the require
 
 ### Design Process
 
-Here we show some screenshots of our design process.
+Here we show our design process.
 
-Front page version 1\
-<img src="https://drive.google.com/uc?id=1P7Tq8dNZ9hj9_5CzR46AYgqpTEdxZrn8" title="front1" width="250" height="350"/>
+<img src="design.png" title="front1">
 
 ### Reflection
 
