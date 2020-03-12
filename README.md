@@ -40,6 +40,6 @@ If we had more time, we plan to add more food items to our database, and provide
 ### Links
 
 - [Github](https://github.com/HCI330-Project/diet/tree/master)
-- [Website](http://159.89.227.172:3000/): swole.io
-- Our website works on any device. Go to our [website](http://159.89.227.172:3000/): swole.io, choose your fitness goal, enter your weight, and voila! You have a nice menu for today to reach your fitness goal. You can also choose to sign up to our site and login at any time. As a registered user, you can update your weight and get today's menu on your profile page.
+- [Website](http://swole.io/)
+- Our website works on any device. Go to our [website](http://swole.io/), choose your fitness goal, enter your weight, and voila! You have a nice menu for today to reach your fitness goal. You can also choose to sign up to our site and login at any time. As a registered user, you can update your weight and get today's menu on your profile page.
 
