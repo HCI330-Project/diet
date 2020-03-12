@@ -1,4 +1,4 @@
-# Swole Project Report
+![Image](https://drive.google.com/uc?id=19cCVH6l2VfLklEfrLQfRVt70bxc-WGJb)
 
 ### Problem & Related Work
 
@@ -10,7 +10,7 @@ Since we assumed that our users lack necessary knowledge to help them create nut
 
 ### Paper Prototyping
 
-Watch a User Test: [Interview](https://youtu.be/ts-yDdSn_7E).
+[![SWOLE Paper Prototype](https://i.ytimg.com/vi/ts-yDdSn_7E/maxresdefault.jpg)](https://youtu.be/ts-yDdSn_7E "SWOLE Paper Prototype")
 
 The concept was largely intuitive to users, but several problems warranted changes. First, wording in the hamburger menu puzzled users. For example, users did not expect to find upcoming meals by clicking the "Calendar" link, so it was changed to "Upcoming Meals". Similarly, users did not expect the front page's "Go" button, listed beneath the data collection form, to generate a meal plan. Thus, "Go" is changed to "Get Meals". The biggest problem was how users were unsure of when to click their profile icon or the hamburger menu, which are located in the upper right and upper left corners, respectively. Thus, "Profile" was moved to be a field inside the hamburger menu.
 
@@ -31,7 +31,10 @@ There are some additional things we have implemented that are not on the require
 
 ### Design Process
 
-![Front page version 1](images/front1.jpeg =500x)
+Here we show some screenshots of our design process.
+
+Front page version 1\
+<img src="https://drive.google.com/uc?id=1P7Tq8dNZ9hj9_5CzR46AYgqpTEdxZrn8" title="front1" width="250" height="350"/>
 
 ### Reflection
 
