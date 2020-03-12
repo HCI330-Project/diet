@@ -25,9 +25,23 @@ Round 3 entailed giving Swole a responsive interface that is particularly mobile
 There are some additional things we have implemented that are not on the required list.
 
 * We set up a DigitalOcean server to host our website.
-* We use NodeJS and Express to route our pages.
-* We set up databases to store user information and food items in order to make our website fully functional.
+* We used NodeJS and Express combined with RESTful routing to route our pages.
+* Our ExpressJS app uses middleware installed through npm including:
+  * bodyParser
+  * ejs
+  * express-session
+  * express
+  * methodOverride
+  * mongoose
+  * node-sass
+  * nodemon
+  * passportLocal
+  * passportLocalMongoose
+
+
+* We set up a MongoDB database to store user models' information and our food model's items in order to make our website fully functional.
 * We make a progressive web application that can be installed on any platform that uses a standards-compliant browser.
+
 
 ### Design Process
 
@@ -46,4 +60,5 @@ If we had more time, we plan to add more food items to our database, and provide
 
 - [Github](https://github.com/HCI330-Project/diet/tree/master)
 - [Website](http://swole.io/)
-- Our website works on any device. Go to our [website](http://swole.io/), choose your fitness goal, enter your weight, and voila! You have a nice menu for today to reach your fitness goal. You can also choose to sign up to our site and login at any time. As a registered user, you can update your weight and get today's menu on your profile page.
+- Instruction:
+Our website works on any device. Go to our [website](http://swole.io/), choose your fitness goal, enter your weight, and voila! You have a nice menu for today to reach your fitness goal. You can also choose to sign up to our site and login at any time. As a registered user, you can update your weight and get today's menu on your profile page. We also provide a progressive web application. The installation guide is [here](https://drive.google.com/open?id=1VefeDqO-Z0hZEIgCkDrJHkQ9k9Zasyki).
