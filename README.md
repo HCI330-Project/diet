@@ -1,14 +1,12 @@
 # Swole Project Report
 
-<h1><span style="color:red">add screenshots !!!!</span></h1>
-
 ### Problem & Related Work
 
 In a busy world, society regrettably neglects fitness. With the World Health Organization claiming 20% of deaths stem from dietary risks, humanity is falling to preventable ailments. Despite awareness, hardly anyone commits to a solution since few diets prioritize nutritional moderation. Humanity dreams of becoming healthy, searching for charming, easy diets; in reality, fitness strictly demands a nutritionally balanced lifestyle. Until a sturdy fitness plan earns society's respect, the epidemic will resume on its trajectory. Current inventions include intake-tracking calculators, but do not curate meals. MyFitnessPal tracks daily macros, but leaves users without food suggestions. Meanwhile, Weight Watchers tracks food via a point system, but only suggests affiliated food brands. Swole promises a food itinerary one must follow per personal data collection. Meal plans have calories divided between proteins, carbohydrates and fats to sustain individuals. Users will assume weight goals are reachable per a simple layout, matching the developers’ intentions.
 
 ### User Research
 
-Since we assumed that our users lack necessary knowledge to help them create nutritionally balanced meal plans, we wanted to find out whether our assumption stood, along other reasons preventing them from eating healthy and achieving their fitness goals. We created a hybrid interview that consisted of a questionnaire and some contextual inquiry tasks. It was designed to find discrepancies between answers of similar questions, which may indicate human’s illiteracy around calories. Questions and tasks ranged from “*Describe what you would consume on an ideal day*” to “*What distracts you from taking your health to the next leve*l”. We recruited three potential users, representing three categories of humans, namely newbies, gym rats and middle-aged people. From the interviews, we discovered that all three types of people do not have enough nutritional knowledge and are way too busy to care about their diets. They are our perfect users. And we also confirmed that our primary goal is to alleviate users’ insecurities about planning meals, while keeping the interactions as simple as possible.
+Since we assumed that our users lack necessary knowledge to help them create nutritionally balanced meal plans, we wanted to find out whether our assumption stood, along other reasons preventing them from eating healthy and achieving their fitness goals. We created a hybrid interview that consisted of a questionnaire and some contextual inquiry tasks. It was designed to find discrepancies between answers of similar questions, which may indicate human’s illiteracy around calories. Questions and tasks ranged from “*Describe what you would consume on an ideal day*” to “*What distracts you from taking your health to the next level*”. We recruited three potential users, representing three categories of humans, namely newbies, gym rats and middle-aged people. From the interviews, we discovered that all three types of people do not have enough nutritional knowledge and are way too busy to care about their diets. They are our perfect users. And we also confirmed that our primary goal is to alleviate users’ insecurities about planning meals, while keeping the interactions as simple as possible.
 
 ### Paper Prototyping
 
@@ -42,4 +40,3 @@ If we had more time, we plan to add more food items to our database, and provide
 - [Github](https://github.com/HCI330-Project/diet/tree/master)
 - [Website](http://swole.io/)
 - Our website works on any device. Go to our [website](http://swole.io/), choose your fitness goal, enter your weight, and voila! You have a nice menu for today to reach your fitness goal. You can also choose to sign up to our site and login at any time. As a registered user, you can update your weight and get today's menu on your profile page.
-
