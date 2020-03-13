@@ -1,4 +1,4 @@
-![Image](https://drive.google.com/uc?id=19cCVH6l2VfLklEfrLQfRVt70bxc-WGJb)
+![Image](images/swole.jpg)
 
 ### Problem & Related Work
 
@@ -47,7 +47,7 @@ There are some additional things we have implemented that are not on the require
 
 Here we show our design process.
 
-<img src="design.png" title="front1">
+<img src="images/design.png" title="front1">
 
 ### Reflection
 
