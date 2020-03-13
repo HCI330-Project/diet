@@ -243,7 +243,7 @@ body:not(:-moz-handler-blocked) fieldset {
   display: flex;
   position: absolute;
   bottom: 0px;
-  width: 94%;
+  width: 100%;
 
   color: #fafafa
 }
